@@ -61,32 +61,32 @@
                 ◀
             </button>
             
-            <!-- 卡片 -->
-            <div id="card-container" class="w-full h-[380px] sm:h-[400px] cursor-pointer relative mx-8">
+            <!-- 卡片主体（调整为 min-h 适应长短句，防文字溢出） -->
+            <div id="card-container" class="w-full h-[420px] sm:h-[440px] cursor-pointer relative mx-8">
                 <div id="flip-card" class="w-full h-full relative transform-style-3d">
                     
-                    <!-- 卡片正面 -->
-                    <div class="absolute inset-0 bg-white rounded-2xl border border-stone-100 shadow-xl shadow-stone-200/50 flex flex-col items-center justify-center p-6 backface-hidden">
-                        <div id="card-word-ruby" class="word-title flex flex-wrap items-center justify-center text-5xl sm:text-6xl tracking-wide select-none">
-                            <!-- 由 JavaScript 动态生成带拼音的汉字 -->
+                    <!-- 卡片正面（去除了冲突的 text-5xl，增加滚动与居中对齐） -->
+                    <div class="absolute inset-0 bg-white rounded-2xl border border-stone-100 shadow-xl shadow-stone-200/50 flex flex-col items-center justify-center p-5 backface-hidden overflow-y-auto">
+                        <div id="card-word-ruby" class="word-title w-full flex flex-col items-center justify-center tracking-wide select-none">
+                            <!-- 由 JavaScript 动态生成内容 -->
                         </div>
                     </div>
 
                     <!-- 卡片反面 -->
-                    <div class="absolute inset-0 bg-orange-50/40 rounded-2xl border-2 border-orange-100/60 shadow-xl shadow-stone-200/50 flex flex-col p-5 backface-hidden overflow-hidden">
+                    <div class="absolute inset-0 bg-orange-50/40 rounded-2xl border-2 border-orange-100/60 shadow-xl shadow-stone-200/50 flex flex-col p-5 backface-hidden overflow-y-auto">
                         <div class="absolute inset-2 border border-amber-900/5 rounded-xl pointer-events-none"></div>
 
-                        <div class="relative z-10 flex flex-col justify-between h-full py-0.5">
+                        <div class="relative z-10 flex flex-col justify-between min-h-full py-1">
                             <!-- 中文释义 -->
                             <div>
                                 <div class="inline-flex items-center gap-1 bg-amber-700/10 text-amber-800 text-[10px] font-bold tracking-wider px-2 py-0.5 rounded-md mb-1.5">
                                     <span>华文释义</span>
                                 </div>
-                                <p id="card-def-zh" class="text-[15px] font-semibold text-stone-800 leading-relaxed pl-1">暂无释义</p>
+                                <div id="card-def-zh" class="text-[14px] font-medium text-stone-800 leading-relaxed pl-1">暂无释义</div>
                             </div>
 
                             <!-- 翻译双栏 -->
-                            <div class="grid grid-cols-2 gap-3 border-t border-b border-amber-900/5 py-2.5 my-1">
+                            <div class="grid grid-cols-2 gap-3 border-t border-b border-amber-900/5 py-2.5 my-2">
                                 <div>
                                     <div class="inline-flex items-center gap-1 bg-sky-100/60 text-sky-800 text-[9px] font-bold tracking-wider px-1.5 py-0.5 rounded mb-1">
                                         <span>ENGLISH</span>
@@ -102,7 +102,7 @@
                             </div>
 
                             <!-- 例句 -->
-                            <div class="bg-white/80 border border-amber-950/5 p-3.5 rounded-xl shadow-sm">
+                            <div class="bg-white/80 border border-amber-950/5 p-3.5 rounded-xl shadow-sm mt-1">
                                 <div class="inline-flex items-center gap-1 bg-amber-900/5 text-amber-900/70 text-[10px] font-bold tracking-wider px-1.5 py-0.5 rounded mb-1.5">
                                     <span>例句</span>
                                 </div>
@@ -147,7 +147,7 @@
         <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-5 relative flex flex-col max-h-[90vh]">
             <button onclick="closeQuiz()" class="absolute top-3 right-3 text-stone-400 hover:text-stone-600 text-xl font-bold transition-colors">&times;</button>
             <div class="border-b border-stone-100 pb-2 mb-3">
-                <h3 class="text-base font-bold text-stone-800 flex items-center gap-1" id="quiz-title-text">🎯 生词释义挑战</h3>
+                <h3 class="text-base font-bold text-stone-800 flex items-center gap-1" id="quiz-title-text">🎯 缩略语测验</h3>
                 <div class="w-full bg-stone-100 h-1.5 rounded-full mt-2 overflow-hidden">
                     <div id="quiz-progress-bar" class="bg-amber-500 h-full transition-all duration-300" style="width: 0%"></div>
                 </div>
@@ -155,7 +155,7 @@
             </div>
             <div class="flex-1 overflow-y-auto mb-1 pr-1">
                 <div id="quiz-question-container">
-                    <h4 id="quiz-question-word" class="text-2xl font-serif font-bold text-stone-800 text-center my-3 tracking-wide">-</h4>
+                    <h4 id="quiz-question-word" class="text-xl font-serif font-bold text-stone-800 text-center my-3 tracking-wide">-</h4>
                     <div id="quiz-options" class="space-y-2"></div>
                 </div>
                 <div id="quiz-result-container" class="hidden text-center py-6">
@@ -171,13 +171,8 @@
         </div>
     </div>
 
-    <!-- ==========================================
-         脚本加载（顺序很重要！）
-         ========================================== -->
-    <!-- 1. 先加载数据 -->
+    <!-- 脚本加载 -->
     <script src="data.js"></script>
-    
-    <!-- 2. 再加载逻辑 -->
     <script src="script.js"></script>
 
 </body>
