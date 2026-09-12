@@ -41,36 +41,50 @@
     display: none;        /* Chrome / Safari 隐藏滚动条 */
 }
 
-/* 5. 终极修复向反面翻转时的文字镜像倒转问题 */
+/* 5. 修复向反面翻转时的文字镜像倒转问题 */
 #flip-card > div:nth-child(2) {
     transform: rotateY(180deg);
 }
 
 
 /* ==========================================================================
-   正反面文本流式排版修复（防文字撑爆、重叠）
+   正反面文本排版修复（彻底解决纵向单列排成长条、文字撑爆重叠）
    ========================================================================== */
 
-/* 正面核心文字容器：确保长句居中对齐、自由换行 */
+/* 正面核心文字容器：改为块级居中，禁止纵向列排 */
 #card-word-ruby {
     width: 100%;
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    word-break: break-word;
-    white-space: normal;
-    padding: 0.5rem 1rem;
+    display: block !important;
+    text-align: center;
+    padding: 1rem;
     box-sizing: border-box;
 }
 
-/* 长句中的文本段落通用样式 */
-#card-word-ruby p {
-    margin: 0;
-    line-height: 1.6;
+/* 短词注音时的横向弹性流容器 */
+.ruby-row-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.25rem;
+    width: 100%;
+}
+
+/* 概述长句专用文本框：确保多字时横向自然换行 */
+.question-text-box {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
     word-break: break-all;
     overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.question-text-box p {
+    margin: 0;
+    line-height: 1.5;
 }
 
 /* 规范注音组件 (Ruby) 排版 */
