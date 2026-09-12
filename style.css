@@ -2,15 +2,20 @@
    3D 闪卡核心翻转架构
    ========================================================================== */
 
-/* 1. 为最外层容器开启 3D 视距 */
+/* 1. 为最外层容器开启 3D 视距，并限制最大高度防止移动端变形 */
 #card-container {
     perspective: 1200px;
+    user-select: none;
+    cursor: pointer;
 }
 
 /* 2. 核心动画卡片座：负责承载整体旋转 */
 .transform-style-3d {
     transform-style: preserve-3d;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 /* 3. 当卡片被点击激活时，整体绕 Y 轴旋转 180 度 */
@@ -18,7 +23,7 @@
     transform: rotateY(180deg);
 }
 
-/* 4. 正面和背面公用的基础 3D 隔离属性 */
+/* 4. 正面和背面公用的基础 3D 隔离属性与容器自适应 */
 .backface-hidden {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -26,11 +31,56 @@
     inset: 0;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
+    border-radius: 1.5rem; /* 与卡片圆角完全贴合 */
+    overflow-y: auto;      /* 内容过长时允许卡内平滑滚动，不破坏布局 */
+    scrollbar-width: none; /* Firefox 隐藏滚动条 */
 }
 
-/* 5. 终极修复向反面翻转时的文字镜像镜像倒转问题 */
+.backface-hidden::-webkit-scrollbar {
+    display: none;        /* Chrome / Safari 隐藏滚动条 */
+}
+
+/* 5. 终极修复向反面翻转时的文字镜像倒转问题 */
 #flip-card > div:nth-child(2) {
     transform: rotateY(180deg);
+}
+
+
+/* ==========================================================================
+   正反面文本流式排版修复（防文字撑爆、重叠）
+   ========================================================================== */
+
+/* 正面核心文字容器：确保长句居中对齐、自由换行 */
+#card-word-ruby {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    word-break: break-word;
+    white-space: normal;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+}
+
+/* 长句中的文本段落通用样式 */
+#card-word-ruby p {
+    margin: 0;
+    line-height: 1.6;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+/* 规范注音组件 (Ruby) 排版 */
+ruby {
+    ruby-position: over;
+}
+
+rt {
+    user-select: none;
+    line-height: 1.2;
 }
 
 
@@ -44,13 +94,10 @@ button:disabled {
     opacity: 0.85;
 }
 
-/* 规范注音组件 (Ruby) 在各款浏览器下的排版表现 */
-ruby {
-    ruby-position: over;
-}
-
-rt {
-    user-select: none;
+/* Quiz 弹窗内的题目长文本防撑爆 */
+#quiz-question-word {
+    word-break: break-word;
+    white-space: normal;
 }
 
 
