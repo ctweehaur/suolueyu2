@@ -17,6 +17,19 @@ if (typeof allIdioms === 'undefined') {
     console.error("错误：未找到生词数据，请检查 data.js 是否正确引入！");
 }
 
+// 辅助工具：提取等号前后的题目与答案
+function splitWordItem(rawWord) {
+    if (!rawWord) return { question: "未知生词", answer: "" };
+    if (rawWord.includes("=")) {
+        const parts = rawWord.split("=");
+        return {
+            question: parts[0].trim(),
+            answer: parts[1].trim()
+        };
+    }
+    return { question: rawWord.trim(), answer: rawWord.trim() };
+}
+
 // ==========================================
 // 2. 核心初始化函数 (学习卡片)
 // ==========================================
@@ -56,34 +69,68 @@ function renderCard() {
     if (flipCardEl) flipCardEl.classList.remove('rotate-y-180');
     isFlipped = false;
 
-    // 正面渲染
+    // 分离问题与缩略答案
+    const { question, answer } = splitWordItem(currentWord.word);
+
+    // ---------------- 正面渲染 ----------------
     const rubyContainer = document.getElementById('card-word-ruby');
     if (rubyContainer) {
-        const wordText = currentWord.word || "未知生词";
         const pinyinText = currentWord.pinyin || "";
 
-        if (pinyinText) {
+        // 针对长短词做排版分流：短词显示标准拼音Ruby；长句子采用自适应流式排版
+        if (question.length <= 6 && pinyinText && !pinyinText.includes("=")) {
             const pinyinArray = pinyinText.split(/\s+/);
-            let rubyHtml = "";
-            for (let i = 0; i < wordText.length; i++) {
-                const char = wordText[i];
+            let rubyHtml = `<div class="flex flex-wrap justify-center items-center gap-1">`;
+            for (let i = 0; i < question.length; i++) {
+                const char = question[i];
                 const py = pinyinArray[i] || "";
                 rubyHtml += `
                     <ruby class="flex flex-col items-center mx-1">
-                        <rt class="text-lg sm:text-xl text-stone-500 font-sans tracking-normal lowercase mb-2 font-medium">${py}</rt>
-                        <span class="font-serif font-bold">${char}</span>
+                        <rt class="text-base sm:text-lg text-stone-500 font-sans tracking-normal lowercase mb-1 font-medium">${py}</rt>
+                        <span class="font-serif font-bold text-3xl sm:text-4xl text-stone-800">${char}</span>
                     </ruby>
                 `;
             }
+            rubyHtml += `</div>`;
             rubyContainer.innerHTML = rubyHtml;
         } else {
-            rubyContainer.innerHTML = `<span class="font-serif font-bold">${wordText}</span>`;
+            // 长句子/概述原句：分级缩小字号，防止撑爆卡片
+            let dynamicFontSize = "text-3xl sm:text-4xl";
+            if (question.length > 14) {
+                dynamicFontSize = "text-lg sm:text-xl leading-relaxed";
+            } else if (question.length > 8) {
+                dynamicFontSize = "text-xl sm:text-2xl leading-relaxed";
+            } else {
+                dynamicFontSize = "text-2xl sm:text-3xl leading-snug";
+            }
+
+            rubyContainer.innerHTML = `
+                <div class="w-full px-2 sm:px-4 text-center">
+                    <p class="font-serif font-bold ${dynamicFontSize} text-stone-800 break-words tracking-wide">
+                        ${question}
+                    </p>
+                    <div class="mt-3 text-xs text-stone-400 font-sans">（点击卡片查看概述提炼答案）</div>
+                </div>
+            `;
         }
     }
 
-    // 反面渲染
+    // ---------------- 反面渲染 ----------------
+    // 如果存在等号提炼答案，在反面顶部突出展示缩略语
     const defZhEl = document.getElementById('card-def-zh');
-    if (defZhEl) defZhEl.innerText = currentWord.defZh || '暂无释义';
+    if (defZhEl) {
+        if (answer) {
+            defZhEl.innerHTML = `
+                <div class="mb-2 pb-2 border-b border-stone-200">
+                    <span class="text-xs font-sans font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">概述缩略词</span>
+                    <div class="text-2xl sm:text-3xl font-serif font-bold text-emerald-600 mt-1">${answer}</div>
+                </div>
+                <div>${currentWord.defZh || '暂无释义'}</div>
+            `;
+        } else {
+            defZhEl.innerText = currentWord.defZh || '暂无释义';
+        }
+    }
 
     const defEnEl = document.getElementById('card-def-en');
     if (defEnEl) defEnEl.innerText = currentWord.defEn || 'No English translation available.';
@@ -93,10 +140,11 @@ function renderCard() {
 
     const exampleEl = document.getElementById('card-example');
     if (exampleEl) {
-        const wordText = currentWord.word || '';
         let exampleText = currentWord.example || '暂无例句。';
-        if (wordText && exampleText.includes(wordText)) {
-            exampleText = exampleText.replace(wordText, `______`);
+        // 优先挖空缩略答案，若无则挖空原词
+        const targetWord = answer || question;
+        if (targetWord && exampleText.includes(targetWord)) {
+            exampleText = exampleText.replace(targetWord, `______`);
         }
         exampleEl.innerText = exampleText;
     }
@@ -106,7 +154,6 @@ function renderCard() {
         progressEl.innerText = `进度：${currentIndex + 1} / ${currentPlan.length} ${isWeaknessMode ? '（错题训练中）' : ''}`;
     }
 
-    // 更新导航按钮状态
     updateNavButtons();
 }
 
@@ -128,14 +175,12 @@ function setupFlipEvent() {
 function prevCard() {
     if (currentPlan.length === 0) return;
     
-    // 如果当前是第一张，跳转到最后一张
     if (currentIndex === 0) {
         currentIndex = currentPlan.length - 1;
     } else {
         currentIndex--;
     }
     
-    // 如果卡片是翻转状态，回到正面
     const flipCardEl = document.getElementById('flip-card');
     if (flipCardEl && isFlipped) {
         flipCardEl.classList.remove('rotate-y-180');
@@ -148,14 +193,12 @@ function prevCard() {
 function nextCard() {
     if (currentPlan.length === 0) return;
     
-    // 如果当前是最后一张，跳转到第一张
     if (currentIndex === currentPlan.length - 1) {
         currentIndex = 0;
     } else {
         currentIndex++;
     }
     
-    // 如果卡片是翻转状态，回到正面
     const flipCardEl = document.getElementById('flip-card');
     if (flipCardEl && isFlipped) {
         flipCardEl.classList.remove('rotate-y-180');
@@ -170,7 +213,6 @@ function updateNavButtons() {
     const nextBtn = document.getElementById('next-btn');
     const counter = document.getElementById('card-counter');
     
-    // 按钮禁用状态（只有0个词时禁用）
     if (prevBtn) {
         prevBtn.disabled = currentPlan.length === 0;
         prevBtn.style.opacity = currentPlan.length === 0 ? '0.3' : '1';
@@ -180,11 +222,7 @@ function updateNavButtons() {
         nextBtn.style.opacity = currentPlan.length === 0 ? '0.3' : '1';
     }
     if (counter) {
-        if (currentPlan.length > 0) {
-            counter.innerText = `${currentIndex + 1} / ${currentPlan.length}`;
-        } else {
-            counter.innerText = '0 / 0';
-        }
+        counter.innerText = currentPlan.length > 0 ? `${currentIndex + 1} / ${currentPlan.length}` : '0 / 0';
     }
 }
 
@@ -212,7 +250,6 @@ function markMastery(isMastered) {
     updateWeaknessButton(wrongList.length);
     updateMasteryProgress();
     
-    // 自动进入下一个
     nextCard();
 }
 
@@ -232,7 +269,6 @@ function updateWeaknessButton(count) {
     const btn = document.querySelector('button[onclick="startWeaknessTraining()"]');
     if (btn) btn.innerHTML = `🎯 开启错题专项训练 (<span class="text-amber-600 font-bold">${count}</span>)`;
     
-    // 同时更新单独显示的计数
     const countEl = document.getElementById('wrong-count');
     if (countEl) countEl.innerText = count;
 }
@@ -252,7 +288,7 @@ function showToast(message, type = 'success') {
     const bgClass = type === 'success' 
         ? 'bg-stone-800 text-white' 
         : 'bg-red-50 border border-red-200 text-red-800';
-    toast.className = `${bgClass} px-4 py-2.5 rounded-xl shadow-lg text-xs font-semibold tracking-wide flex items-center gap-1.5 animate-bounce pointer-events-auto transition-all duration-300`;
+    toast.className = `${bgClass} px-4 py-2.5 rounded-xl shadow-lg text-xs font-semibold tracking-wide flex items-center gap-1.5 animate-bounce pointer-events-auto transition-all duration-300 z-50`;
     toast.innerHTML = message;
     container.appendChild(toast);
     
@@ -266,9 +302,7 @@ function showToast(message, type = 'success') {
 // 6. 进度追踪
 // ==========================================
 function updateMasteryProgress() {
-    if (typeof allIdioms === 'undefined' || allIdioms.length === 0) {
-        return;
-    }
+    if (typeof allIdioms === 'undefined' || allIdioms.length === 0) return;
     
     let wrongList = JSON.parse(localStorage.getItem('vocabulary_wrong_list')) || [];
     const totalWords = allIdioms.length;
@@ -284,12 +318,9 @@ function updateMasteryProgress() {
     if (txt) txt.innerText = `已掌握 ${masteredCount} / ${totalWords} 词 (${percent}%)`;
 }
 
-
 // ==========================================
 // 7. 核心 Quiz (小测验) 控制逻辑
 // ==========================================
-
-// 开启测验
 function startQuiz() {
     if (!allIdioms || allIdioms.length < 4) {
         showToast("⚠️ 生词数量不足 4 个，无法生成选择题！", "error");
@@ -308,12 +339,10 @@ function startQuiz() {
             return;
         }
         const shuffled = [...newAvailable].sort(() => 0.5 - Math.random());
-        const actualTotal = Math.min(5, shuffled.length);
-        quizQuestions = shuffled.slice(0, actualTotal);
+        quizQuestions = shuffled.slice(0, Math.min(5, shuffled.length));
     } else {
         const shuffled = [...availableWords].sort(() => 0.5 - Math.random());
-        const actualTotal = Math.min(5, shuffled.length);
-        quizQuestions = shuffled.slice(0, actualTotal);
+        quizQuestions = shuffled.slice(0, Math.min(5, shuffled.length));
     }
 
     quizQuestions.forEach(q => {
@@ -322,39 +351,34 @@ function startQuiz() {
         }
     });
 
-    quizQuestions = quizQuestions.map(q => {
-        return {
-            ...q,
-            qType: Math.floor(Math.random() * 3)
-        };
-    });
+    quizQuestions = quizQuestions.map(q => ({
+        ...q,
+        qType: Math.floor(Math.random() * 3)
+    }));
 
     quizCurrentIndex = 0;
     quizScore = 0;
 
     document.getElementById('quiz-question-container').classList.remove('hidden');
     document.getElementById('quiz-result-container').classList.add('hidden');
-
-    document.getElementById('quiz-title-text').innerText = `🎯 生词测验 - 第 ${quizRound + 1} 轮`;
+    document.getElementById('quiz-title-text').innerText = `🎯 缩略语测验 - 第 ${quizRound + 1} 轮`;
     document.getElementById('quiz-modal').classList.remove('hidden');
     renderQuizQuestion();
 }
 
-// 关闭测验
 function closeQuiz() {
     document.getElementById('quiz-modal').classList.add('hidden');
 }
 
-// 渲染单道选择题
 function renderQuizQuestion() {
     const currentQ = quizQuestions[quizCurrentIndex];
+    const { question: currentQuestionText, answer: currentAnswerText } = splitWordItem(currentQ.word);
     
     document.getElementById('quiz-q-num').innerText = `题目 ${quizCurrentIndex + 1} / ${quizQuestions.length}`;
-    const percent = ((quizCurrentIndex) / quizQuestions.length) * 100;
+    const percent = (quizCurrentIndex / quizQuestions.length) * 100;
     document.getElementById('quiz-progress-bar').style.width = `${percent}%`;
 
     const questionWordEl = document.getElementById('quiz-question-word');
-
     const distractors = allIdioms
         .filter(item => item.word !== currentQ.word)
         .sort(() => 0.5 - Math.random())
@@ -364,27 +388,36 @@ function renderQuizQuestion() {
     const optionsContainer = document.getElementById('quiz-options');
 
     if (currentQ.qType === 0) {
-        // 看词猜意
-        questionWordEl.innerHTML = `<span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded mr-2 font-sans font-medium">看词猜意</span><br>${currentQ.word}`;
+        // 看词选缩略语/释义
+        questionWordEl.innerHTML = `
+            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-sans font-medium">看原词选对应缩略语</span>
+            <div class="text-lg sm:text-xl font-bold font-serif text-stone-800 mt-2 px-2">${currentQuestionText}</div>
+        `;
         
         optionsContainer.innerHTML = options.map(opt => {
             const isCorrect = (opt.word === currentQ.word);
+            const { answer: optAnswer } = splitWordItem(opt.word);
+            const displayLabel = optAnswer || opt.defZh;
             return `
-                <button onclick="handleQuizAnswer(this, ${isCorrect})" class="w-full text-left p-4 rounded-xl border-2 border-stone-100 hover:border-amber-400 hover:bg-amber-50/50 transition-all font-sans text-stone-700 text-sm leading-relaxed">
-                    ${opt.defZh}
+                <button onclick="handleQuizAnswer(this, ${isCorrect})" class="w-full text-left p-3.5 rounded-xl border-2 border-stone-100 hover:border-amber-400 hover:bg-amber-50/50 transition-all font-sans text-stone-700 text-sm leading-relaxed">
+                    <span class="font-bold font-serif text-base text-stone-900 mr-1">${optAnswer ? '【' + optAnswer + '】' : ''}</span>${opt.defZh}
                 </button>
             `;
         }).join('');
 
     } else if (currentQ.qType === 1) {
-        // 根据释义选词
-        questionWordEl.innerHTML = `<span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-sans font-medium block w-max mx-auto mb-2">根据释义选生词</span><p class="text-base font-medium font-sans px-4 text-stone-700 leading-relaxed text-left">${currentQ.defZh}</p>`;
+        // 根据释义选原句/缩略词
+        questionWordEl.innerHTML = `
+            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-sans font-medium block w-max mx-auto mb-2">根据释义选对应词语</span>
+            <p class="text-sm sm:text-base font-medium font-sans px-4 text-stone-700 leading-relaxed text-left">${currentQ.defZh}</p>
+        `;
         
         optionsContainer.innerHTML = options.map(opt => {
             const isCorrect = (opt.word === currentQ.word);
+            const { question: optQ, answer: optA } = splitWordItem(opt.word);
             return `
-                <button onclick="handleQuizAnswer(this, ${isCorrect})" class="w-full text-center p-4 rounded-xl border-2 border-stone-100 hover:border-amber-400 hover:bg-amber-50/50 transition-all font-serif font-bold text-stone-800 text-base">
-                    ${opt.word}
+                <button onclick="handleQuizAnswer(this, ${isCorrect})" class="w-full text-center p-3 rounded-xl border-2 border-stone-100 hover:border-amber-400 hover:bg-amber-50/50 transition-all font-serif font-bold text-stone-800 text-sm sm:text-base">
+                    ${optA ? optA + '（' + optQ + '）' : optQ}
                 </button>
             `;
         }).join('');
@@ -392,24 +425,28 @@ function renderQuizQuestion() {
     } else if (currentQ.qType === 2) {
         // 语境填空
         let exampleText = currentQ.example || '暂无例句。';
-        if (currentQ.word && exampleText.includes(currentQ.word)) {
-            exampleText = exampleText.replace(currentQ.word, ` ______ `);
+        const targetWord = currentAnswerText || currentQuestionText;
+        if (targetWord && exampleText.includes(targetWord)) {
+            exampleText = exampleText.replace(targetWord, ` ______ `);
         }
         
-        questionWordEl.innerHTML = `<span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-sans font-medium block w-max mx-auto mb-2">生词语境填空</span><p class="text-base font-normal font-sans px-4 text-stone-700 leading-relaxed text-left">${exampleText}</p>`;
+        questionWordEl.innerHTML = `
+            <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-sans font-medium block w-max mx-auto mb-2">概述填空</span>
+            <p class="text-sm sm:text-base font-normal font-sans px-4 text-stone-700 leading-relaxed text-left">${exampleText}</p>
+        `;
         
         optionsContainer.innerHTML = options.map(opt => {
             const isCorrect = (opt.word === currentQ.word);
+            const { answer: optA, question: optQ } = splitWordItem(opt.word);
             return `
-                <button onclick="handleQuizAnswer(this, ${isCorrect})" class="w-full text-center p-4 rounded-xl border-2 border-stone-100 hover:border-amber-400 hover:bg-amber-50/50 transition-all font-serif font-bold text-stone-800 text-base">
-                    ${opt.word}
+                <button onclick="handleQuizAnswer(this, ${isCorrect})" class="w-full text-center p-3 rounded-xl border-2 border-stone-100 hover:border-amber-400 hover:bg-amber-50/50 transition-all font-serif font-bold text-stone-800 text-base">
+                    ${optA || optQ}
                 </button>
             `;
         }).join('');
     }
 }
 
-// 处理用户点击选项响应
 function handleQuizAnswer(buttonEl, isCorrect) {
     const allButtons = document.getElementById('quiz-options').querySelectorAll('button');
     allButtons.forEach(btn => btn.disabled = true);
@@ -448,7 +485,6 @@ function handleQuizAnswer(buttonEl, isCorrect) {
     }, 1200);
 }
 
-// 结算小测验结果
 function showQuizResults() {
     document.getElementById('quiz-progress-bar').style.width = `100%`;
     document.getElementById('quiz-question-container').classList.add('hidden');
@@ -471,7 +507,6 @@ function showQuizResults() {
     document.getElementById('quiz-eval').innerHTML = evaluation;
 }
 
-// 启动执行
 window.onload = function() {
     initApp();
 };
