@@ -1927,16 +1927,23 @@
             rubyContainer.innerHTML = rubyHtml;
         }
 
-        // 反面渲染
+// 反面渲染
         const defZhEl = document.getElementById('card-def-zh');
         if (defZhEl) {
+            // 隐藏外层多余的“华文释义”标签，保持视觉清爽
+            const parentBlock = defZhEl.parentElement;
+            const originalTag = parentBlock ? parentBlock.querySelector('.bg-amber-700\\/10') : null;
+            if (originalTag) originalTag.style.display = answer ? 'none' : 'inline-flex';
+
             if (answer) {
                 defZhEl.innerHTML = `
-                    <div class="mb-2 pb-2 border-b border-stone-200">
-                        <span class="text-[10px] font-sans font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">概述提炼答案</span>
-                        <div class="text-2xl sm:text-3xl font-serif font-bold text-emerald-600 mt-1">${answer}</div>
+                    <div class="mb-3 pb-3 border-b border-amber-900/10">
+                        <span class="inline-block text-[10px] font-sans font-bold text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded tracking-wide">
+                            概述提炼答案
+                        </span>
+                        <div class="text-3xl font-serif font-bold text-emerald-600 mt-1.5 tracking-wider">${answer}</div>
                     </div>
-                    <div class="text-stone-700 text-xs sm:text-sm leading-relaxed">${currentWord.defZh || '暂无释义'}</div>
+                    <div class="text-stone-700 text-sm leading-relaxed">${currentWord.defZh || '暂无释义'}</div>
                 `;
             } else {
                 defZhEl.innerText = currentWord.defZh || '暂无释义';
@@ -1955,9 +1962,10 @@
             const cleanQuestion = question.replace(/\s+/g, '');
             const targetWord = answer || cleanQuestion;
             if (targetWord && exampleText.includes(targetWord)) {
-                exampleText = exampleText.replace(targetWord, `______`);
+                // 将挖空处包裹一层，保证在句末不被突兀折行
+                exampleText = exampleText.replace(targetWord, `<span class="inline-block tracking-tighter text-amber-700 font-bold px-1">______</span>`);
             }
-            exampleEl.innerText = exampleText;
+            exampleEl.innerHTML = exampleText;
         }
 
         const progressEl = document.getElementById('progress-indicator');
