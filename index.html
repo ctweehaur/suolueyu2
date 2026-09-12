@@ -61,13 +61,13 @@
                 ◀
             </button>
             
-            <!-- 卡片主体（调整为 min-h 适应长短句，防文字溢出） -->
+            <!-- 卡片主体 -->
             <div id="card-container" class="w-full h-[420px] sm:h-[440px] cursor-pointer relative mx-8">
                 <div id="flip-card" class="w-full h-full relative transform-style-3d">
                     
-                    <!-- 卡片正面（去除了冲突的 text-5xl，增加滚动与居中对齐） -->
-                    <div class="absolute inset-0 bg-white rounded-2xl border border-stone-100 shadow-xl shadow-stone-200/50 flex flex-col items-center justify-center p-5 backface-hidden overflow-y-auto">
-                        <div id="card-word-ruby" class="word-title w-full flex flex-col items-center justify-center tracking-wide select-none">
+                    <!-- 卡片正面：自适应横向流动，上下居中 -->
+                    <div class="absolute inset-0 bg-white rounded-2xl border border-stone-100 shadow-xl shadow-stone-200/50 flex items-center justify-center p-4 backface-hidden overflow-y-auto">
+                        <div id="card-word-ruby" class="word-title w-full tracking-wide select-none">
                             <!-- 由 JavaScript 动态生成内容 -->
                         </div>
                     </div>
