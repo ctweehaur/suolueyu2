@@ -76,16 +76,20 @@ function renderCard() {
     const rubyContainer = document.getElementById('card-word-ruby');
     if (rubyContainer) {
         const pinyinText = currentWord.pinyin || "";
+        // 取等号左边的拼音
+        const questionPinyin = pinyinText.split("=")[0].trim();
+        const pinyinArray = questionPinyin ? questionPinyin.split(/\s+/) : [];
 
-        // 针对长短词做排版分流：短词显示标准拼音Ruby；长句子采用自适应流式排版
-        if (question.length <= 6 && pinyinText && !pinyinText.includes("=")) {
-            const pinyinArray = pinyinText.split(/\s+/);
-            let rubyHtml = `<div class="flex flex-wrap justify-center items-center gap-1">`;
+        // 仅当短词（<=4字）、非概述长句、且拼音和字数完全对应时才启用逐字注音
+        const canUseRuby = question.length <= 4 && pinyinArray.length === question.length;
+
+        if (canUseRuby) {
+            let rubyHtml = `<div class="ruby-row-container">`;
             for (let i = 0; i < question.length; i++) {
                 const char = question[i];
                 const py = pinyinArray[i] || "";
                 rubyHtml += `
-                    <ruby class="flex flex-col items-center mx-1">
+                    <ruby class="inline-flex flex-col items-center mx-1">
                         <rt class="text-base sm:text-lg text-stone-500 font-sans tracking-normal lowercase mb-1 font-medium">${py}</rt>
                         <span class="font-serif font-bold text-3xl sm:text-4xl text-stone-800">${char}</span>
                     </ruby>
@@ -94,38 +98,39 @@ function renderCard() {
             rubyHtml += `</div>`;
             rubyContainer.innerHTML = rubyHtml;
         } else {
-            // 长句子/概述原句：分级缩小字号，防止撑爆卡片
-            let dynamicFontSize = "text-3xl sm:text-4xl";
-            if (question.length > 14) {
+            // 概述题长句：横向段落流动排版，字数多时自适应字号
+            let dynamicFontSize = "text-2xl sm:text-3xl";
+            if (question.length > 20) {
+                dynamicFontSize = "text-base sm:text-lg leading-relaxed";
+            } else if (question.length > 12) {
                 dynamicFontSize = "text-lg sm:text-xl leading-relaxed";
-            } else if (question.length > 8) {
-                dynamicFontSize = "text-xl sm:text-2xl leading-relaxed";
-            } else {
-                dynamicFontSize = "text-2xl sm:text-3xl leading-snug";
+            } else if (question.length > 6) {
+                dynamicFontSize = "text-xl sm:text-2xl leading-normal";
             }
 
             rubyContainer.innerHTML = `
-                <div class="w-full px-2 sm:px-4 text-center">
-                    <p class="font-serif font-bold ${dynamicFontSize} text-stone-800 break-words tracking-wide">
+                <div class="question-text-box px-2">
+                    <p class="font-serif font-bold ${dynamicFontSize} text-stone-800 tracking-wide">
                         ${question}
                     </p>
-                    <div class="mt-3 text-xs text-stone-400 font-sans">（点击卡片查看概述提炼答案）</div>
+                    <div class="mt-4 text-xs text-stone-400 font-sans tracking-normal">
+                        👆 这是概述原句，点击卡片翻看【提炼缩略词】
+                    </div>
                 </div>
             `;
         }
     }
 
     // ---------------- 反面渲染 ----------------
-    // 如果存在等号提炼答案，在反面顶部突出展示缩略语
     const defZhEl = document.getElementById('card-def-zh');
     if (defZhEl) {
         if (answer) {
             defZhEl.innerHTML = `
                 <div class="mb-2 pb-2 border-b border-stone-200">
-                    <span class="text-xs font-sans font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">概述缩略词</span>
+                    <span class="text-[10px] font-sans font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">概述提炼答案</span>
                     <div class="text-2xl sm:text-3xl font-serif font-bold text-emerald-600 mt-1">${answer}</div>
                 </div>
-                <div>${currentWord.defZh || '暂无释义'}</div>
+                <div class="text-stone-700 text-xs sm:text-sm leading-relaxed">${currentWord.defZh || '暂无释义'}</div>
             `;
         } else {
             defZhEl.innerText = currentWord.defZh || '暂无释义';
@@ -141,7 +146,7 @@ function renderCard() {
     const exampleEl = document.getElementById('card-example');
     if (exampleEl) {
         let exampleText = currentWord.example || '暂无例句。';
-        // 优先挖空缩略答案，若无则挖空原词
+        // 优先挖空缩略答案
         const targetWord = answer || question;
         if (targetWord && exampleText.includes(targetWord)) {
             exampleText = exampleText.replace(targetWord, `______`);
@@ -388,16 +393,15 @@ function renderQuizQuestion() {
     const optionsContainer = document.getElementById('quiz-options');
 
     if (currentQ.qType === 0) {
-        // 看词选缩略语/释义
+        // 看词选缩略语
         questionWordEl.innerHTML = `
             <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-sans font-medium">看原词选对应缩略语</span>
-            <div class="text-lg sm:text-xl font-bold font-serif text-stone-800 mt-2 px-2">${currentQuestionText}</div>
+            <div class="text-base sm:text-lg font-bold font-serif text-stone-800 mt-2 px-2 leading-relaxed">${currentQuestionText}</div>
         `;
         
         optionsContainer.innerHTML = options.map(opt => {
             const isCorrect = (opt.word === currentQ.word);
             const { answer: optAnswer } = splitWordItem(opt.word);
-            const displayLabel = optAnswer || opt.defZh;
             return `
                 <button onclick="handleQuizAnswer(this, ${isCorrect})" class="w-full text-left p-3.5 rounded-xl border-2 border-stone-100 hover:border-amber-400 hover:bg-amber-50/50 transition-all font-sans text-stone-700 text-sm leading-relaxed">
                     <span class="font-bold font-serif text-base text-stone-900 mr-1">${optAnswer ? '【' + optAnswer + '】' : ''}</span>${opt.defZh}
@@ -406,24 +410,24 @@ function renderQuizQuestion() {
         }).join('');
 
     } else if (currentQ.qType === 1) {
-        // 根据释义选原句/缩略词
+        // 根据释义选对应词语
         questionWordEl.innerHTML = `
             <span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-sans font-medium block w-max mx-auto mb-2">根据释义选对应词语</span>
-            <p class="text-sm sm:text-base font-medium font-sans px-4 text-stone-700 leading-relaxed text-left">${currentQ.defZh}</p>
+            <p class="text-xs sm:text-sm font-medium font-sans px-4 text-stone-700 leading-relaxed text-left">${currentQ.defZh}</p>
         `;
         
         optionsContainer.innerHTML = options.map(opt => {
             const isCorrect = (opt.word === currentQ.word);
             const { question: optQ, answer: optA } = splitWordItem(opt.word);
             return `
-                <button onclick="handleQuizAnswer(this, ${isCorrect})" class="w-full text-center p-3 rounded-xl border-2 border-stone-100 hover:border-amber-400 hover:bg-amber-50/50 transition-all font-serif font-bold text-stone-800 text-sm sm:text-base">
+                <button onclick="handleQuizAnswer(this, ${isCorrect})" class="w-full text-center p-3 rounded-xl border-2 border-stone-100 hover:border-amber-400 hover:bg-amber-50/50 transition-all font-serif font-bold text-stone-800 text-xs sm:text-sm">
                     ${optA ? optA + '（' + optQ + '）' : optQ}
                 </button>
             `;
         }).join('');
 
     } else if (currentQ.qType === 2) {
-        // 语境填空
+        // 概述语境填空
         let exampleText = currentQ.example || '暂无例句。';
         const targetWord = currentAnswerText || currentQuestionText;
         if (targetWord && exampleText.includes(targetWord)) {
@@ -432,14 +436,14 @@ function renderQuizQuestion() {
         
         questionWordEl.innerHTML = `
             <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-sans font-medium block w-max mx-auto mb-2">概述填空</span>
-            <p class="text-sm sm:text-base font-normal font-sans px-4 text-stone-700 leading-relaxed text-left">${exampleText}</p>
+            <p class="text-xs sm:text-sm font-normal font-sans px-4 text-stone-700 leading-relaxed text-left">${exampleText}</p>
         `;
         
         optionsContainer.innerHTML = options.map(opt => {
             const isCorrect = (opt.word === currentQ.word);
             const { answer: optA, question: optQ } = splitWordItem(opt.word);
             return `
-                <button onclick="handleQuizAnswer(this, ${isCorrect})" class="w-full text-center p-3 rounded-xl border-2 border-stone-100 hover:border-amber-400 hover:bg-amber-50/50 transition-all font-serif font-bold text-stone-800 text-base">
+                <button onclick="handleQuizAnswer(this, ${isCorrect})" class="w-full text-center p-3 rounded-xl border-2 border-stone-100 hover:border-amber-400 hover:bg-amber-50/50 transition-all font-serif font-bold text-stone-800 text-sm sm:text-base">
                     ${optA || optQ}
                 </button>
             `;
