@@ -1,1535 +1,1535 @@
 const vocabularyData = [
     { 
-        word: "西游记红楼梦水浒传三国演义=四大名著", 
-        pinyin: "xī yóu jì hóng lóu mèng shuǐ hǔ zhuàn sān guó yǎn yì = sì dà míng zhù", 
+        word: "西游记 红楼梦 水浒传 三国演义=四大名著", 
+        pinyin: "xī yóu jì hóng lóu mèng shuǐ hǔ zhuàn sān guó yǎn yì", 
         defZh: "把罗列的四部中国古代长篇小说，直接压缩为文化专有名词（16字→4字）。", 
         defEn: "Four Great Classical Novels", 
         defBm: "Empat Karya Agung Klasik", 
         example: "他喜欢读西游记、红楼梦、水浒传与三国演义。 → 他喜读四大名著。" 
     },
     { 
-        word: "出生衰老生病死亡=生老病死", 
-        pinyin: "chū shēng shuāi lǎo shēng bìng sǐ wáng = shēng lǎo bìng sǐ", 
+        word: "出生 衰老 生病 死亡=生老病死", 
+        pinyin: "chū shēng shuāi lǎo shēng bìng sǐ wáng", 
         defZh: "把人生必须经历的四个生理自然过程，精炼为固定成语（8字→4字）。", 
         defEn: "The four stages of life (Birth, aging, illness, death)", 
         defBm: "Kitaran hidup (Lahir, tua, sakit, mati)", 
         example: "任何人都无法逃避出生、衰老、生病与死亡的规律。 → 人人难免生老病死。" 
     },
     { 
-        word: "毛笔宣纸墨汁砚台=文房四宝", 
-        pinyin: "máo bǐ xuān zhǐ mò zhī yàn tái = wén fáng sì bǎo", 
+        word: "毛笔 宣纸 墨汁 砚台=文房四宝", 
+        pinyin: "máo bǐ xuān zhǐ mò zhī yàn tái", 
         defZh: "把四种传统书写绘画器具，压缩为专有文化统称（8字→4字）。", 
         defEn: "Four Treasures of the Study", 
         defBm: "Empat Khazanah Bilik Belajar", 
         example: "他在书桌前备齐了毛笔、宣纸、墨汁和端砚。 → 他备齐文房四宝。" 
     },
     { 
-        word: "梅花兰花竹子菊花=四君子", 
-        pinyin: "méi huā lán huā zhú zi jú huā = sì jūn zǐ", 
+        word: "梅花 兰花 竹子 菊花=四君子", 
+        pinyin: "méi huā lán huā zhú zi jú huā", 
         defZh: "把象征品格高洁的四种植物，概括为传统文化雅称（8字→3字）。", 
         defEn: "Four Gentlemen (Plum, orchid, bamboo, chrysanthemum)", 
         defBm: "Empat Tumbuhan Berjiwa Mulia", 
         example: "国画屏风上细致描绘着梅花、兰花、翠竹与菊花。 → 屏风上绘有四君子。" 
     },
     { 
-        word: "柴米油盐酱醋茶=开门七件事", 
-        pinyin: "chái mǐ yóu yán jiàng cù chá = kāi mén qī jiàn shì", 
+        word: "柴米油盐 酱醋茶=开门七件事", 
+        pinyin: "chái mǐ yóu yán jiàng cù chá", 
         defZh: "把居家每日不可或缺的七种厨房物资，压缩为经典生活用语（7字→5字，亦可缩为“生活必需品”）。", 
         defEn: "Seven daily necessities", 
         defBm: "Tujuh keperluan harian asas", 
         example: "成家之后方知每天都要为柴米油盐酱醋茶发愁操心。 → 成家后总为开门七件事操心。" 
     },
     { 
-        word: "弹琴下棋书法绘画=琴棋书画", 
-        pinyin: "tán qín xià qí shū fǎ huì huà = qín qí shū huà", 
+        word: "弹琴 下棋 书法 绘画=琴棋书画", 
+        pinyin: "tán qín xià qí shū fǎ huì huà", 
         defZh: "把古代文人修身所习的四门才艺，直接提炼为四字专称（8字→4字，或缩为“四艺”）。", 
         defEn: "Four Scholar Arts (Zither, go, calligraphy, painting)", 
         defBm: "Empat Seni Cendekiawan Tradisi Cina", 
         example: "名门闺秀自幼潜心修习弹琴、下棋、书法与绘画。 → 闺秀自幼通晓琴棋书画。" 
     },
     { 
-        word: "酸甜苦辣咸=五味", 
-        pinyin: "suān tián kǔ là xián = wǔ wèi", 
+        word: "酸 甜 苦 辣 咸=五味", 
+        pinyin: "suān tián kǔ là xián", 
         defZh: "把舌尖感受到的五种基本味道，归纳为数字概括词（5字→2字）。", 
         defEn: "Five basic flavors / Life's experiences", 
         defBm: "Lima rasa asas", 
         example: "大厨在烹饪时精准调和了酸、甜、苦、辣、咸。 → 大厨精准调和五味。" 
     },
     { 
-        word: "蚊子苍蝇蟑螂跳蚤=害虫", 
-        pinyin: "wén zi cāng ying zhāng láng tiào zao = hài chóng", 
+        word: "蚊子 苍蝇 蟑螂 跳蚤=害虫", 
+        pinyin: "wén zi cāng ying zhāng láng tiào zao", 
         defZh: "把逐一罗列的卫生有害昆虫，提炼为其上位属概念（8字→2字）。", 
         defEn: "Pests / Harmful insects", 
         defBm: "Serangga perosak", 
         example: "阴暗潮湿的死角处滋生了许多蚊子、苍蝇、蟑螂与跳蚤。 → 死角滋生大量害虫。" 
     },
     { 
-        word: "春季夏季秋季冬季=四季", 
-        pinyin: "chūn jì xià jì qiū jì dōng jì = sì jì", 
+        word: "春季 夏季 秋季 冬季=四季", 
+        pinyin: "chūn jì xià jì qiū jì dōng jì", 
         defZh: "把一年四个时令季节，压缩为双音节时序词（8字→2字，或缩为“一年到头”）。", 
         defEn: "Four seasons", 
         defBm: "Empat musim", 
         example: "高山温室在春季、夏季、秋季和冬季都对外开放。 → 高山温室四季开放。" 
     },
     { 
-        word: "东面南面西面北面=四方", 
-        pinyin: "dōng miàn nán miàn xī miàn běi miàn = sì fāng", 
+        word: "东面 南面 西面 北面=四方", 
+        pinyin: "dōng miàn nán miàn xī miàn běi miàn", 
         defZh: "把分散的四个空间朝向，提炼为一个方位统称（8字→2字）。", 
         defEn: "Four directions / Everywhere", 
         defBm: "Empat penjuru", 
         example: "游人与商贾从东面、南面、西面和北面源源不断汇聚而来。 → 商旅从四方汇聚而来。" 
     },
     { 
-        word: "买衣吃饭住房行路=衣食住行", 
-        pinyin: "mǎi yī chī fàn zhù fáng xíng lù = yī shí zhù xíng", 
+        word: "买衣 吃饭 住房 行路=衣食住行", 
+        pinyin: "mǎi yī chī fàn zhù fáng xíng lù", 
         defZh: "把平民生活维系的四项根本开销，缩编为定型成语（8字→4字，亦可缩为“生计”）。", 
         defEn: "Basic necessities of life (Clothing, food, shelter, travel)", 
         defBm: "Keperluan asas hidup", 
         example: "地方官施政重在顾好百姓买衣、吃饭、住房与行路的需求。 → 施政重在顾好百姓衣食住行。" 
     },
     { 
-        word: "金银铜铁锡=五金", 
-        pinyin: "jīn yín tóng tiě xī = wǔ jīn", 
+        word: "金 银 铜 铁 锡=五金", 
+        pinyin: "jīn yín tóng tiě xī", 
         defZh: "把五种传统基础金属原料，概括为工业与日用统称（5字→2字）。", 
         defEn: "Five metals / Hardware", 
         defBm: "Logam asas / Barangan logam", 
         example: "工坊里到处堆放着金、银、铜、铁与锡制成的零部件。 → 工坊堆满五金配件。" 
     },
     { 
-        word: "德育智育体育美育劳动=五育", 
-        pinyin: "dé yù zhì yù tǐ yù měi yù láo dòng = wǔ yù", 
+        word: "德育 智育 体育 美育 劳动=五育", 
+        pinyin: "dé yù zhì yù tǐ yù měi yù láo dòng", 
         defZh: "把学校推行的五项综合素质教育体系，归结为双音节代词（10字→2字）。", 
         defEn: "Five education domains", 
         defBm: "Pendidikan lima aspek seimbang", 
         example: "课程纲要着重促进德育、智育、体育、美育与劳动的平衡。 → 课程着重五育并举。" 
     },
     { 
-        word: "稻米黍子谷子小麦大豆=五谷", 
-        pinyin: "dào mǐ shǔ zi gǔ zi xiǎo mài dà dòu = wǔ gǔ", 
+        word: "稻米 黍子 谷子 小麦 大豆=五谷", 
+        pinyin: "dào mǐ shǔ zi gǔ zi xiǎo mài dà dòu", 
         defZh: "把五种主要农耕主粮作物，直接归纳为泛指词（10字→2字，亦可缩为“粮食”）。", 
         defEn: "Five cereal crops / Food grains", 
         defBm: "Bijirin asas", 
         example: "雨水充沛使得田间种植的稻米、黍子、谷子、小麦和大豆喜获丰收。 → 田间五谷丰登。" 
     },
     { 
-        word: "喜悦愤怒悲哀快乐=喜怒哀乐", 
-        pinyin: "xǐ yuè fèn nù bēi āi kuài lè = xǐ nù āi lè", 
+        word: "喜悦 愤怒 悲哀 快乐=喜怒哀乐", 
+        pinyin: "xǐ yuè fèn nù bēi āi kuài lè", 
         defZh: "把人心内景的多种情绪呈现，提炼为经典成语（8字→4字，亦可缩为“情绪”）。", 
         defEn: "Range of human emotions", 
         defBm: "Segala ragam emosi manusia", 
         example: "话剧演员在台上毫无遮掩地宣泄着喜悦、愤怒、悲哀与快乐。 → 演员充分展现喜怒哀乐。" 
     },
     { 
-        word: "眼睛耳朵鼻子嘴巴舌头=五官", 
-        pinyin: "yǎn jing ěr duo bí zi zuǐ ba shé tou = wǔ guān", 
+        word: "眼睛 耳朵 鼻子 嘴巴 舌头=五官", 
+        pinyin: "yǎn jing ěr duo bí zi zuǐ ba shé tou", 
         defZh: "把面部具体的五个感觉感知器官，压缩为身体部位专名（10字→2字）。", 
         defEn: "Five facial organs / Facial features", 
         defBm: "Pancaindera muka", 
         example: "浓烈烟雾瞬间剧烈刺激了他的眼睛、耳朵、鼻子、嘴巴和舌头。 → 浓烟刺激其五官。" 
     },
     { 
-        word: "读书人耕田农夫做工匠人经商贾人=士农工商", 
-        pinyin: "dú shū rén gēng tián nóng fū zuò gōng jiàng rén jīng shāng gǔ rén = shì nóng gōng shāng", 
+        word: "读书人 耕田农夫 做工匠人 经商贾人=士农工商", 
+        pinyin: "dú shū rén gēng tián nóng fū zuò gōng jiàng rén jīng shāng gǔ rén", 
         defZh: "把传统古代四大阶层与主要从业人员，提炼为行业合称（16字→4字，现代可缩为“各行各业”）。", 
         defEn: "Four occupations of ancient China / All trades", 
         defBm: "Empat golongan pekerjaan / Semua lapisan masyarakat", 
         example: "读书人、耕田农夫、做工匠人与经商贾人皆齐聚官衙门前。 → 士农工商皆齐聚官衙。" 
     },
     { 
-        word: "江水河水湖水海水=江河湖海", 
-        pinyin: "jiāng shuǐ hé shuǐ hú shuǐ hǎi shuǐ = jiāng hé hú hǎi", 
+        word: "江水 河水 湖水 海水=江河湖海", 
+        pinyin: "jiāng shuǐ hé shuǐ hú shuǐ hǎi shuǐ", 
         defZh: "把地表自然存在的各类径流与广阔水体，精炼为代表性成语（8字→4字，亦可缩为“水域”）。", 
         defEn: "Rivers, lakes and seas / Natural waters", 
         defBm: "Sungai, tasik dan lautan / Perairan", 
         example: "塑料微粒已广泛污染了大地上的江水、河水、湖水与海水。 → 塑料微粒污染江河湖海。" 
     },
     { 
-        word: "刮大风下暴雨打响雷闪烈电=狂风暴雨", 
-        pinyin: "guā dà fēng xià bào yǔ dǎ xiǎng léi shǎn liè diàn = kuáng fēng bào yǔ", 
+        word: "刮大风 下暴雨 打响雷 闪烈电=狂风暴雨", 
+        pinyin: "guā dà fēng xià bào yǔ dǎ xiǎng léi shǎn liè diàn", 
         defZh: "把极端恶劣天候的多重具体细节描写，压缩为成语（12字→4字，亦可缩为“风暴”）。", 
         defEn: "Violent storm / Tempest", 
         defBm: "Ribut petir dan angin kencang", 
         example: "山谷间突然刮大风、下暴雨、打响雷并闪烈电。 → 山谷突现狂风暴雨。" 
     },
     { 
-        word: "马牛羊猪狗鸡=六畜", 
-        pinyin: "mǎ niú yáng zhū gǒu jī = liù chù", 
+        word: "马 牛 羊 猪 狗 鸡=六畜", 
+        pinyin: "mǎ niú yáng zhū gǒu jī", 
         defZh: "把古人长期圈养驯化的六类常见家畜家禽，提炼为数字代称（6字→2字，亦可缩为“牲畜”）。", 
         defEn: "Six domestic animals / Livestock", 
         defBm: "Haiwan ternakan", 
         example: "大洪水冲毁了农庄，马、牛、羊、猪、狗与鸡死伤无数。 → 洪水导致六畜死绝。" 
     },
     { 
-        word: "红橙黄绿青蓝紫=七彩", 
-        pinyin: "hóng chéng huáng lǜ qīng lán zǐ = qī cǎi", 
+        word: "红 橙 黄 绿 青 蓝 紫=七彩", 
+        pinyin: "hóng chéng huáng lǜ qīng lán zǐ", 
         defZh: "把日光经水珠折射显现出的七种色彩光谱，概括为颜色统称（7字→2字）。", 
         defEn: "Seven colors of rainbow", 
         defBm: "Tujuh warna pelangi", 
         example: "雨后天边挂着一道包含红、橙、黄、绿、青、蓝、紫的光带。 → 雨后天边现七彩虹桥。" 
     },
     { 
-        word: "望诊闻诊问诊切诊=望闻问切", 
-        pinyin: "wàng zhěn wén zhěn wèn zhěn qiè zhěn = wàng wén wèn qiè", 
+        word: "望诊 闻诊 问诊 切诊=望闻问切", 
+        pinyin: "wàng zhěn wén zhěn wèn zhěn qiè zhěn", 
         defZh: "把传统中医看病使用的观气色、听闻声息、询问病情与切脉四种诊断方法，提炼为专业成语（8字→4字）。", 
         defEn: "Four diagnostic methods of TCM", 
         defBm: "Empat kaedah diagnosis perubatan tradisional Cina", 
         example: "老中医通过细致的望诊、闻诊、问诊与切诊为病人断定病源。 → 老中医通过望闻问切辨明病源。" 
     },
     { 
-        word: "爷爷奶奶爸爸妈妈兄弟姐妹=至亲", 
-        pinyin: "yé ye nǎi nai bà ba mā ma xiōng dì jiě mèi = zhì qīn", 
+        word: "爷爷奶奶 爸爸妈妈 兄弟姐妹=至亲", 
+        pinyin: "yé ye nǎi nai bà ba mā ma xiōng dì jiě mèi", 
         defZh: "把血缘关系最为紧密的一连串家庭成员，归缩为双音节词（12字→2字，或缩为“亲人”）。", 
         defEn: "Close relatives / Next of kin", 
         defBm: "Kaum kerabat terdekat", 
         example: "他远渡重洋去谋生，心中最舍不得的是爷爷、奶奶、爸爸、妈妈和兄弟姐妹。 → 他心中最不舍的是家中至亲。" 
     },
     { 
-        word: "金星木星水星火星土星=五大行星", 
-        pinyin: "jīn xīng mù xīng shuǐ xīng huǒ xīng tǔ xīng = wǔ dà xíng xīng", 
+        word: "金星 木星 水星 火星 土星=五大行星", 
+        pinyin: "jīn xīng mù xīng shuǐ xīng huǒ xīng tǔ xīng", 
         defZh: "把肉眼可见的五颗太阳系传统核心行星，精简为天文学集合称谓（10字→4字）。", 
         defEn: "Five classical planets", 
         defBm: "Lima planet klasik", 
         example: "天文爱好者用肉眼在夜空依稀辨识出了金星、木星、水星、火星与土星。 → 观星者辨识出五大行星。" 
     },
     { 
-        word: "仁爱正义礼节智慧信义=五常", 
-        pinyin: "rén ài zhèng yì lǐ jié zhì huì xìn yì = wǔ cháng", 
+        word: "仁爱 正义 礼节 智慧 信义=五常", 
+        pinyin: "rén ài zhèng yì lǐ jié zhì huì xìn yì", 
         defZh: "把儒家修身立德推崇的仁、义、礼、智、信五项道德准则，压缩为儒学规范词（10字→2字）。", 
         defEn: "Five Constant Virtues", 
         defBm: "Lima sifat murni asas", 
         example: "君子在立身处世时时刻恪守仁爱、正义、礼节、智慧与信义。 → 君子立身恪守五常。" 
     },
     { 
-        word: "长袍大褂短袖长裤旗袍=衣物", 
-        pinyin: "cháng páo dà guà duǎn xiù cháng kù qí páo = yī wù", 
+        word: "长袍 大褂 短袖 长裤 旗袍=衣物", 
+        pinyin: "cháng páo dà guà duǎn xiù cháng kù qí páo", 
         defZh: "把具体展示或整理的多款服饰品种，提炼为其上位大类词（10字→2字，亦可缩为“服装”）。", 
         defEn: "Clothing / Garments", 
         defBm: "Pakaian", 
         example: "义卖摊位上整整齐齐叠放着市民捐来的长袍、大褂、短袖、长裤和旗袍。 → 摊位叠满捐赠衣物。" 
     },
     { 
-        word: "青龙白虎朱雀玄武=四大神兽", 
-        pinyin: "qīng lóng bái hǔ zhū què xuán wǔ = sì dà shén shòu", 
+        word: "青龙 白虎 朱雀 玄武=四大神兽", 
+        pinyin: "qīng lóng bái hǔ zhū què xuán wǔ", 
         defZh: "把中国神话传说中镇守四方的四种神兽，直接归纳为神话专名（8字→4字，亦可缩为“四象”）。", 
         defEn: "Four Mythological Creatures", 
         defBm: "Empat Makhluk Mitos Suci", 
         example: "古城四门城楼分别按照神话雕刻了青龙、白虎、朱雀与玄武。 → 四门雕有四大神兽。" 
     },
     { 
-        word: "喜鹊燕子百灵画眉=益鸟", 
-        pinyin: "xǐ què yàn zi bǎi líng huà méi = yì niǎo", 
+        word: "喜鹊 燕子 百灵 画眉=益鸟", 
+        pinyin: "xǐ què yàn zi bǎi líng huà méi", 
         defZh: "把捕食害虫或为人类带来益处的美丽鸟禽，提炼为其生物属性统称（8字→2字）。", 
         defEn: "Beneficial birds", 
         defBm: "Burung berfaedah", 
         example: "林区内生活栖息着大量诸如喜鹊、燕子、百灵和画眉等飞禽。 → 林区栖息着大量益鸟。" 
     },
     { 
-        word: "松树柏树竹子=岁寒三友", 
-        pinyin: "sōng shù bǎi shù zhú zi = suì hán sān yǒu", 
+        word: "松树 柏树 竹子=岁寒三友", 
+        pinyin: "sōng shù bǎi shù zhú zi", 
         defZh: "把经严冬寒霜而不凋零的三种耐寒植物，压缩为古典文化雅称（6字→4字）。", 
         defEn: "Three Friends of Winter (Pine, bamboo, plum/cypress)", 
         defBm: "Tiga Sahabat Musim Sejuk", 
         example: "文人常以傲霜挺拔的松树、翠柏与竹子来比喻自身不屈的气节。 → 文人常借岁寒三友自勉。" 
     },
     { 
-        word: "水灾火灾风灾旱灾地震=自然灾害", 
-        pinyin: "shuǐ zāi huǒ zāi fēng zāi hàn zāi dì zhèn = zì rán zāi hài", 
+        word: "水灾 火灾 风灾 旱灾 地震=自然灾害", 
+        pinyin: "shuǐ zāi huǒ zāi fēng zāi hàn zāi dì zhèn", 
         defZh: "把各类因大自然异变引发的多样突发性灾变，整体概括为一个规范灾害学术语（10字→4字，亦可缩为“天灾”）。", 
         defEn: "Natural disasters", 
         defBm: "Bencana alam", 
         example: "该岛国常年经受着水灾、火灾、风灾、旱灾与地震的无情侵袭。 → 该岛国频遭自然灾害。" 
     },
     { 
-        word: "泰山华山衡山恒山嵩山=五岳", 
-        pinyin: "tài shān huà shān héng shān héng shān sōng shān = wǔ yuè", 
+        word: "泰山 华山 衡山 恒山 嵩山=五岳", 
+        pinyin: "tài shān huà shān héng shān héng shān sōng shān", 
         defZh: "中国五大名山的总称（东岳泰山、西岳华山、南岳衡山、北岳恒山、中岳嵩山）。（10字→2字）", 
         defEn: "Five Great Mountains of China", 
         defBm: "Lima Gunung Terkenal", 
         example: "徐霞客一生游历了泰山、华山、衡山、恒山与嵩山。 → 徐霞客一生游历五岳。" 
     },
     { 
-        word: "黄河长江澜沧江珠江=大江大河", 
-        pinyin: "huáng hé cháng jiāng lán cāng jiāng zhū jiāng = dà jiāng dà hé", 
+        word: "黄河 长江 澜沧江 珠江=大江大河", 
+        pinyin: "huáng hé cháng jiāng lán cāng jiāng zhū jiāng", 
         defZh: "把列举的多条著名大水系，压缩为河流统称。（8字→4字，亦可缩为“主要河流”）", 
         defEn: "Major rivers", 
         defBm: "Sungai-sungai utama", 
         example: "洪水奔腾在黄河、长江、澜沧江与珠江流域。 → 洪水肆虐各大江大河。" 
     },
     { 
-        word: "蛇蝎子蜈蚣壁虎蟾蜍=五毒", 
-        pinyin: "shé xiē zi wú gōng bì hǔ chán chú = wǔ dú", 
+        word: "蛇 蝎子 蜈蚣 壁虎 蟾蜍=五毒", 
+        pinyin: "shé xiē zi wú gōng bì hǔ chán chú", 
         defZh: "民间传统视为具有剧毒或害人的五种动物。（10字→2字）", 
         defEn: "Five Poisonous Creatures", 
         defBm: "Lima Haiwan Berbisa", 
         example: "端午习俗常悬挂菖蒲艾草以驱避蛇、蝎子、蜈蚣、壁虎与蟾蜍。 → 端午挂艾草以驱五毒。" 
     },
     { 
-        word: "诗经尚书礼记周易春秋=五经", 
-        pinyin: "shī jīng shàng shū lǐ jì zhōu yì chūn qiū = wǔ jīng", 
+        word: "诗经 尚书 礼记 周易 春秋=五经", 
+        pinyin: "shī jīng shàng shū lǐ jì zhōu yì chūn qiū", 
         defZh: "儒家开创并传承的五部核心古典经籍。（10字→2字）", 
         defEn: "Five Classics of Confucianism", 
         defBm: "Lima Kitab Klasik Konfusianisme", 
         example: "古代读书人进京赶考前须精通《诗经》《尚书》《礼记》《周易》与《春秋》。 → 考生赶考前须精通五经。" 
     },
     { 
-        word: "大学中庸论语孟子=四书", 
-        pinyin: "dà xué zhōng yōng lún yǔ mèng zǐ = sì shū", 
+        word: "大学 中庸 论语 孟子=四书", 
+        pinyin: "dà xué zhōng yōng lún yǔ mèng zǐ", 
         defZh: "宋代以降科举必读的四部儒学经典著作。（8字→2字）", 
         defEn: "Four Books of Confucianism", 
         defBm: "Empat Buku Asas Konfusianisme", 
         example: "塾师要求蒙童自幼熟读并背诵《大学》《中庸》《论语》与《孟子》。 → 塾师要求童蒙熟读四书。" 
     },
     { 
-        word: "金木水火土=五行", 
-        pinyin: "jīn mù shuǐ huǒ tǔ = wǔ xíng", 
+        word: "金 木 水 火 土=五行", 
+        pinyin: "jīn mù shuǐ huǒ tǔ", 
         defZh: "中国古代哲学用以解释自然万物运行的五种元素。（5字→2字）", 
         defEn: "Five Elements", 
         defBm: "Lima Elemen Asas", 
         example: "阴阳家依据金、木、水、火、土相生相克的道理断事。 → 术士依五行相生相克断事。" 
     },
     { 
-        word: "喜怒忧思悲恐惊=七情", 
-        pinyin: "xǐ nù yōu sī bēi kǒng jīng = qī qíng", 
+        word: "喜 怒 忧 思 悲 恐 惊=七情", 
+        pinyin: "xǐ nù yōu sī bēi kǒng jīng", 
         defZh: "传统中医与哲学中概括的人类七种主要情绪反应。（7字→2字）", 
         defEn: "Seven Emotions", 
         defBm: "Tujuh Ragam Emosi", 
         example: "修身者力求内心宁静，不因喜、怒、忧、思、悲、恐、惊而过度动容。 → 修身者力求不为七情所扰。" 
     },
     { 
-        word: "李白杜甫白居易王维=著名诗人", 
-        pinyin: "lǐ bái dù fǔ bái jū yì wáng wéi = zhù míng shī rén", 
+        word: "李白 杜甫 白居易 王维=著名诗人", 
+        pinyin: "lǐ bái dù fǔ bái jū yì wáng wéi", 
         defZh: "把列举的多位诗歌创作者，压缩为职业与名望统称。（8字→4字，或缩为“唐代大诗人”）", 
         defEn: "Renowned poets", 
         defBm: "Penyair-penyair masyhur", 
         example: "他课外嗜好吟诵李白、杜甫、白居易与王维的诗作。 → 他嗜好吟诵著名诗人的佳作。" 
     },
     { 
-        word: "心肝脾肺肾=五脏", 
-        pinyin: "xīn gān pí fèi shèn = wǔ zàng", 
+        word: "心 肝 脾 肺 肾=五脏", 
+        pinyin: "xīn gān pí fèi shèn", 
         defZh: "人体胸腔腹腔内的五个核心实质内脏器官。（5字→2字）", 
         defEn: "Five internal organs", 
         defBm: "Lima organ dalaman utama", 
         example: "医师通过脉象全面观察病人的心、肝、脾、肺、肾机能。 → 医师以此调理病患五脏。" 
     },
     { 
-        word: "胃大肠小肠胆膀胱三焦=六腑", 
-        pinyin: "wèi dà cháng xiǎo cháng dǎn páng guāng sān jiāo = liù fǔ", 
+        word: "胃 大肠 小肠 胆 膀胱 三焦=六腑", 
+        pinyin: "wèi dà cháng xiǎo cháng dǎn páng guāng sān jiāo", 
         defZh: "中医学所指六个消化传导排泄的空腔脏腑。（9字→2字）", 
         defEn: "Six hollow organs", 
         defBm: "Enam organ rongga", 
         example: "饮食不节极易损伤胃、大肠、小肠、胆与膀胱等消化系统。 → 暴饮暴食伤及六腑。" 
     },
     { 
-        word: "父子兄弟夫妇朋友=五伦", 
-        pinyin: "fù zǐ xiōng dì fū fù péng you = wǔ lún", 
+        word: "父子 兄弟 夫妇 朋友=五伦", 
+        pinyin: "fù zǐ xiōng dì fū fù péng you", 
         defZh: "传统社会中五种基本的人伦人际关系。（8字→2字）", 
         defEn: "Five Cardinal Relationships", 
         defBm: "Lima Hubungan Moral Asas", 
         example: "古训教导为人当理顺父子、兄弟、夫妇、朋友各层交往。 → 古训教导为人当恪守五伦。" 
     },
     { 
-        word: "生旦净末丑=戏曲行当", 
-        pinyin: "shēng dàn jìng mò chǒu = xì qǔ háng dāng", 
+        word: "生 旦 净 末 丑=戏曲行当", 
+        pinyin: "shēng dàn jìng mò chǒu", 
         defZh: "中国传统戏曲演职角色的五个主要分类门类。（5字→4字，亦可缩为“戏曲角色”）", 
         defEn: "Traditional opera roles", 
         defBm: "Watak-watak teater opera klasik", 
         example: "戏班演员分工极其严明，涵盖了生、旦、净、末、丑各类角色。 → 戏班演员涵盖了各戏曲行当。" 
     },
     { 
-        word: "红黄蓝绿白黑=各类色彩", 
-        pinyin: "hóng huáng lán lǜ bái hēi = gè lèi sè cǎi", 
+        word: "红 黄 蓝 绿 白 黑=各类色彩", 
+        pinyin: "hóng huáng lán lǜ bái hēi", 
         defZh: "把列举的多样具体颜色，统摄为视觉概念。（6字→4字，亦可缩为“颜色”）", 
         defEn: "Various colors", 
         defBm: "Pelbagai warna", 
         example: "画布上交织点缀着红色、黄色、蓝色、绿色与白色。 → 画布点缀着各类色彩。" 
     },
     { 
-        word: "金冠项圈戒指手镯玉佩=首饰", 
-        pinyin: "jīn guān xiàng quān jiè zhi shǒu zhuó yù pèi = shǒu shì", 
+        word: "金冠 项圈 戒指 手镯 玉佩=首饰", 
+        pinyin: "jīn guān xiàng quān jiè zhi shǒu zhuó yù pèi", 
         defZh: "把佩戴在头、颈、手腕上的各类具体贵重饰品压缩。（10字→2字，或缩为“珠宝”）", 
         defEn: "Jewelry / Ornaments", 
         defBm: "Barang kemas / Perhiasan", 
         example: "匣子里整齐码放着金冠、项圈、戒指、手镯和玉佩。 → 匣内放满昂贵首饰。" 
     },
     { 
-        word: "刀枪剑戟斧钺钩叉=兵器", 
-        pinyin: "dāo qiāng jiàn jǐ fǔ yuè gōu chā = bīng qì", 
+        word: "刀 枪 剑 戟 斧 钺 钩 叉=兵器", 
+        pinyin: "dāo qiāng jiàn jǐ fǔ yuè gōu chā", 
         defZh: "把罗列的多种古代冷兵器作战器械归类。（8字→2字，亦可缩为“十八般武艺”）", 
         defEn: "Weapons / Arms", 
         defBm: "Senjata perang", 
         example: "武术馆兵器架上插满了刀、枪、剑、戟、斧、钺等器械。 → 兵器架上摆满兵器。" 
     },
     { 
-        word: "桌子椅子长凳茶几柜子=家具", 
-        pinyin: "zhuō zi yǐ zi cháng dèng chá jǐ guì zi = jiā jù", 
+        word: "桌子 椅子 长凳 茶几 柜子=家具", 
+        pinyin: "zhuō zi yǐ zi cháng dèng chá jǐ guì zi", 
         defZh: "把房间内摆设的木制生活用具归纳统称。（10字→2字）", 
         defEn: "Furniture", 
         defBm: "Perabot rumah", 
         example: "大火把屋里的桌子、椅子、长凳、茶几和柜子烧了个精光。 → 大火把屋中家具焚毁。" 
     },
     { 
-        word: "碗碟盘筷勺叉=餐具", 
-        pinyin: "wǎn dié pán kuài sháo chā = cān jù", 
+        word: "碗 碟 盘 筷 勺 叉=餐具", 
+        pinyin: "wǎn dié pán kuài sháo chā", 
         defZh: "把用餐时使用的盛放与夹取器皿统摄。（6字→2字）", 
         defEn: "Tableware / Utensils", 
         defBm: "Peralatan makan", 
         example: "开饭前，服务生提前摆好了碗、碟、盘、筷子与勺子。 → 服务生提前备齐餐具。" 
     },
     { 
-        word: "苹果香蕉橙子葡萄西瓜=水果", 
-        pinyin: "píng guǒ xiāng jiāo chéng zi pú táo xī guā = shuǐ guǒ", 
+        word: "苹果 香蕉 橙子 葡萄 西瓜=水果", 
+        pinyin: "píng guǒ xiāng jiāo chéng zi pú táo xī guā", 
         defZh: "把列举的多款多汁食用植物果实提炼为类别词。（10字→2字）", 
         defEn: "Fruits", 
         defBm: "Buah-buahan", 
         example: "摊贩把刚采摘的苹果、香蕉、橙子、葡萄与西瓜码在案头。 → 摊贩售卖新鲜水果。" 
     },
     { 
-        word: "青菜萝卜黄瓜茄子番茄=蔬菜", 
-        pinyin: "qīng cài luó bo huáng guā qié zi fān qié = shū cài", 
+        word: "青菜 萝卜 黄瓜 茄子 番茄=蔬菜", 
+        pinyin: "qīng cài luó bo huáng guā qié zi fān qié", 
         defZh: "把罗列的多样农家园圃副食植物概括为总称。（10字→2字）", 
         defEn: "Vegetables", 
         defBm: "Sayur-sayuran", 
         example: "早市菜摊上摆卖着青菜、萝卜、黄瓜、茄子和番茄。 → 菜摊摆满新鲜蔬菜。" 
     },
     { 
-        word: "大麦高粱燕麦小米=杂粮", 
-        pinyin: "dà mài gāo liang yàn mài xiǎo mǐ = zá liáng", 
+        word: "大麦 高粱 燕麦 小米=杂粮", 
+        pinyin: "dà mài gāo liang yàn mài xiǎo mǐ", 
         defZh: "指稻米与普通小麦主食以外的其他粗粮作物。（8字→2字）", 
         defEn: "Coarse grains / Cereals", 
         defBm: "Bijirin kasar", 
         example: "养生膳食提倡平时多搭配大麦、高粱、燕麦与小米煮粥。 → 养生提倡多食杂粮。" 
     },
     { 
-        word: "虾蟹贝类螺类鱿鱼=海鲜", 
-        pinyin: "xiā xiè bèi lèi luó lèi yóu yú = hǎi xiān", 
+        word: "虾 蟹 贝类 螺类 鱿鱼=海鲜", 
+        pinyin: "xiā xiè bèi lèi luó lèi yóu yú", 
         defZh: "把海产捕捞的甲壳软体鱼类等食用鲜味汇总。（8字→2字，亦可缩为“水产”）", 
         defEn: "Seafood", 
         defBm: "Makanan laut", 
         example: "渔港码头刚卸下一船船鲜虾、螃蟹、贝类与鱿鱼。 → 码头卸下大批海鲜。" 
     },
     { 
-        word: "铅笔圆珠笔尺子橡皮擦卷笔刀=文具", 
-        pinyin: "qiān bǐ yuán zhū bǐ chǐ zi xiàng pí cā juǎn bǐ dāo = wén jù", 
+        word: "铅笔 圆珠笔 尺子 橡皮擦 卷笔刀=文具", 
+        pinyin: "qiān bǐ yuán zhū bǐ chǐ zi xiàng pí cā juǎn bǐ dāo", 
         defZh: "把学生书包内零碎的笔具、尺板与涂改工具统称。（13字→2字）", 
         defEn: "Stationery", 
         defBm: "Alat tulis", 
         example: "开学前夕，家长带孩子去书局买铅笔、尺子、橡皮和卷笔刀。 → 家长带孩子采购文具。" 
     },
     { 
-        word: "长鼓大鼓横笛古筝琵琶=乐器", 
-        pinyin: "cháng gǔ dà gǔ héng dí gǔ zhēng pí pa = yuè qì", 
+        word: "长鼓 大鼓 横笛 古筝 琵琶=乐器", 
+        pinyin: "cháng gǔ dà gǔ héng dí gǔ zhēng pí pa", 
         defZh: "把演奏声乐乐曲所用的发声器械总称为大类。（10字→2字）", 
         defEn: "Musical instruments", 
         defBm: "Alat muzik", 
         example: "华乐团室内整齐摆设着长鼓、大鼓、竹笛、古筝与琵琶。 → 室内陈设各类乐器。" 
     },
     { 
-        word: "足球篮球排球羽毛球乒乓球=球类运动", 
-        pinyin: "zú qiú lán qiú pái qiú yǔ máo qiú pīng pāng qiú = qiú lèi yùn dòng", 
+        word: "足球 篮球 排球 羽毛球 乒乓球=球类运动", 
+        pinyin: "zú qiú lán qiú pái qiú yǔ máo qiú pīng pāng qiú", 
         defZh: "把各种以球体为竞技对象的体育活动概括。（13字→4字，亦可缩为“球类”）", 
         defEn: "Ball games / Ball sports", 
         defBm: "Sukan bola", 
         example: "中学生课余酷爱踢足球、打篮球、排球与羽毛球。 → 学子热衷各项球类运动。" 
     },
     { 
-        word: "跳高跳远跨栏标枪铅球=田径项目", 
-        pinyin: "tiào gāo tiào yuǎn kuà lán biāo qiāng qiān qiú = tián jìng xiàng mù", 
+        word: "跳高 跳远 跨栏 标枪 铅球=田径项目", 
+        pinyin: "tiào gāo tiào yuǎn kuà lán biāo qiāng qiān qiú", 
         defZh: "田赛与径赛各类体能竞技单项的集合统称。（10字→4字，或缩为“田径赛”）", 
         defEn: "Track and field events", 
         defBm: "Acara balapan dan padang", 
         example: "校运会上同学们积极角逐跳高、跳远、跨栏与标枪比赛。 → 学生角逐田径项目。" 
     },
     { 
-        word: "咳嗽发烧咽痛鼻塞流涕=感冒症状", 
-        pinyin: "ké sou fā shāo yān tòng bí sāi liú tì = gǎn mào zhèng zhuàng", 
+        word: "咳嗽 发烧 咽痛 鼻塞 流涕=感冒症状", 
+        pinyin: "ké sou fā shāo yān tòng bí sāi liú tì", 
         defZh: "把身体受到风寒病毒感染所出现的典型表征归纳。（10字→4字，或缩为“染病表现”）", 
         defEn: "Cold and flu symptoms", 
         defBm: "Gejala selsema", 
         example: "患儿持续出现咳嗽、高烧不退、咽喉疼痛与严重流涕。 → 患儿出现典型感冒症状。" 
     },
     { 
-        word: "暴雨飓风海啸雷暴寒潮=恶劣气候", 
-        pinyin: "bào yǔ jù fēng hǎi xiào léi bào hán cháo = è liè qì hòu", 
+        word: "暴雨 飓风 海啸 雷暴 寒潮=恶劣气候", 
+        pinyin: "bào yǔ jù fēng hǎi xiào léi bào hán cháo", 
         defZh: "把极具破坏力的大自然极端天气综合提炼。（10字→4字，亦可缩为“灾害性天气”）", 
         defEn: "Severe weather conditions", 
         defBm: "Cuaca buruk melampau", 
         example: "该地区整月频繁遭受暴雨、飓风、海啸与雷暴的轮番肆虐。 → 该区频遭恶劣气候袭击。" 
     },
     { 
-        word: "飞机轮船火车汽车电车=交通工具", 
-        pinyin: "fēi jī lún chuán huǒ chē qì chē diàn chē = jiāo tōng gōng jù", 
+        word: "飞机 轮船 火车 汽车 电车=交通工具", 
+        pinyin: "fēi jī lún chuán huǒ chē qì chē diàn chē", 
         defZh: "用来搭载乘客与货物的各类运输车辆船舶飞机统称。（10字→4字，或缩为“载具”）", 
         defEn: "Means of transportation", 
         defBm: "Kenderaan / Pengangkutan", 
         example: "现代社会中人们依靠飞机、轮船、火车与汽车快速出行。 → 人们依靠现代交通工具出行。" 
     },
     { 
-        word: "公路铁道水路航线管道=交通网络", 
-        pinyin: "gōng lù tiě dào shuǐ lù háng xiàn guǎn dào = jiāo tōng wǎng luò", 
+        word: "公路 铁道 水路 航线 管道=交通网络", 
+        pinyin: "gōng lù tiě dào shuǐ lù háng xiàn guǎn dào", 
         defZh: "陆、海、空各项连通全国运输线路的总称。（10字→4字）", 
         defEn: "Transportation network", 
         defBm: "Rangkaian pengangkutan", 
         example: "四通八达的公路、铁路线、内河水运与国际民航线织就了全国干线。 → 全国建起密集的交通网络。" 
     },
     { 
-        word: "泥石流山体滑坡地面沉降=地质灾害", 
-        pinyin: "ní shí liú shān tǐ huá pō dì miàn chén jiàng = dì zhì zāi hài", 
+        word: "泥石流 山体滑坡 地面沉降=地质灾害", 
+        pinyin: "ní shí liú shān tǐ huá pō dì miàn chén jiàng", 
         defZh: "由地壳或山体受侵蚀破坏引发的严重自然灾变。（11字→4字）", 
         defEn: "Geological disasters", 
         defBm: "Bencana geologi", 
         example: "暴雨诱发了频繁的泥石流、山体滑坡与路基下陷。 → 暴雨引发严重地质灾害。" 
     },
     { 
-        word: "叔叔伯伯舅舅姑姑姨妈=长辈", 
-        pinyin: "shū shu bó bo jiù jiu gū gu yí mā = zhǎng bèi", 
+        word: "叔叔 伯伯 舅舅 姑姑 姨妈=长辈", 
+        pinyin: "shū shu bó bo jiù jiu gū gu yí mā", 
         defZh: "家族家庭中辈分高于自身的亲友统称。（10字→2字，或缩为“亲戚长辈”）", 
         defEn: "Elders / Senior relatives", 
         defBm: "Kaum keluarga generasi tua / Orang tua", 
         example: "逢年过节晚辈主动上门给叔伯、舅舅、姑姑和姨妈请安。 → 晚辈登门向长辈拜年。" 
     },
     { 
-        word: "侄儿外甥孙子孙女外孙=晚辈", 
-        pinyin: "zhí er wài shēng sūn zi sūn nǚ wài sūn = wǎn bèi", 
+        word: "侄儿 外甥 孙子 孙女 外孙=晚辈", 
+        pinyin: "zhí er wài shēng sūn zi sūn nǚ wài sūn", 
         defZh: "家族关系中辈分低于自己的年轻一代族人统称。（10字→2字，或缩为“后辈”）", 
         defEn: "Younger generation / Juniors", 
         defBm: "Generasi muda / Keturunan muda", 
         example: "老人从木匣掏出压岁钱，分发给满堂的侄儿、外甥与孙子孙女。 → 老人向众晚辈派发红包。" 
     },
     { 
-        word: "中餐西餐日料韩餐马来餐=各国美食", 
-        pinyin: "zhōng cān xī cān rì liào hán cān mǎ lái cān = gè guó měi shí", 
+        word: "中餐 西餐 日料 韩餐 马来餐=各国美食", 
+        pinyin: "zhōng cān xī cān rì liào hán cān mǎ lái cān", 
         defZh: "把来自不同国家和民族风味的佳肴料理总括。（11字→4字，或缩为“多元料理”）", 
         defEn: "International cuisines", 
         defBm: "Makanan antarabangsa", 
         example: "美食广场网罗了中餐、西餐、日料与传统马来餐。 → 广场网罗各国美食。" 
     },
     { 
-        word: "花岗岩石灰岩玄武岩大理石=岩石", 
-        pinyin: "huā gāng yán shí huī yán xuán wǔ yán dà lǐ shí = yán shí", 
+        word: "花岗岩 石灰岩 玄武岩 大理石=岩石", 
+        pinyin: "huā gāng yán shí huī yán xuán wǔ yán dà lǐ shí", 
         defZh: "地壳矿物天然聚积形成的固态坚硬石头统称。（12字→2字，亦可缩为“石材”）", 
         defEn: "Rocks / Minerals", 
         defBm: "Batu-batan", 
         example: "地质队员采集了大量的花岗岩、石灰岩与大理石切片。 → 地质队员采集岩石样本。" 
     },
     { 
-        word: "汽油柴油煤油润滑油重油=石油产品", 
-        pinyin: "qì yóu chái yóu méi yóu rùn huá yóu zhòng yóu = shí yóu chǎn pǐn", 
+        word: "汽油 柴油 煤油 润滑油 重油=石油产品", 
+        pinyin: "qì yóu chái yóu méi yóu rùn huá yóu zhòng yóu", 
         defZh: "原油经过分馏裂解提炼制成的工业燃料原料。（11字→4字，或缩为“燃油”）", 
         defEn: "Petroleum products", 
         defBm: "Produk petroleum", 
         example: "炼油厂码头装运着大量汽油、柴油、润滑油与重油。 → 码头装运石油产品。" 
     },
     { 
-        word: "金丝猴大熊猫白鳍豚东北虎=濒危动物", 
-        pinyin: "jīn sī hóu dà xióng māo bái qí tún dōng běi hǔ = bīn wēi dòng wù", 
+        word: "金丝猴 大熊猫 白鳍豚 东北虎=濒危动物", 
+        pinyin: "jīn sī hóu dà xióng māo bái qí tún dōng běi hǔ", 
         defZh: "数量稀少濒临灭绝灭顶之灾的国家级保护物种。（12字→4字，亦可缩为“珍稀物种”）", 
         defEn: "Endangered animals", 
         defBm: "Haiwan terancam pupus", 
         example: "国家保护区重点保护金丝猴、大熊猫与野生东北虎。 → 保护区拯救濒危动物。" 
     },
     { 
-        word: "报纸广播电视杂志互联网=传播渠道", 
-        pinyin: "bào zhǐ guǎng bō diàn shì zá zhì hù lián wǎng = chuán bō qú dào", 
+        word: "报纸 广播 电视 杂志 互联网=传播渠道", 
+        pinyin: "bào zhǐ guǎng bō diàn shì zá zhì hù lián wǎng", 
         defZh: "大众传媒发布和输出资讯的具体平台。（11字→4字，或缩为“媒介”）", 
         defEn: "Media channels", 
         defBm: "Saluran penyebaran media", 
         example: "新闻通过报纸、广播、电视、杂志与互联网快速扩散。 → 消息通过各传播渠道传开。" 
     },
     { 
-        word: "细菌真菌病毒寄生虫支原体=病原体", 
-        pinyin: "xì jūn zhēn jūn bìng dú jì shēng chóng zhī yuán tǐ = bìng yuán tǐ", 
+        word: "细菌 真菌 病毒 寄生虫 支原体=病原体", 
+        pinyin: "xì jūn zhēn jūn bìng dú jì shēng chóng zhī yuán tǐ", 
         defZh: "能够侵入生物机体诱发疾病感染的各类微生物。（12字→3字，或缩为“致病源”）", 
         defEn: "Pathogens", 
         defBm: "Patogen pembawa penyakit", 
         example: "实验室重点分离出诱发肺部感染的细菌、病毒与支原体。 → 实验人员锁定病原体。" 
     },
     { 
-        word: "金牌银牌铜牌纪念章奖状=荣誉", 
-        pinyin: "jīn pái yín pái tóng pái jì niàn zhāng jiǎng zhuàng = róng yù", 
+        word: "金牌 银牌 铜牌 纪念章 奖状=荣誉", 
+        pinyin: "jīn pái yín pái tóng pái jì niàn zhāng jiǎng zhuàng", 
         defZh: "赛事中所颁发奖赏的物质凭证所象征的终极尊崇。（11字→2字，或缩为“嘉奖”）", 
         defEn: "Honors and awards", 
         defBm: "Penghormatan dan anugerah", 
         example: "橱窗里摆满了她多年征战所获的金牌、银牌、铜牌和奖状。 → 橱窗摆满她的个人荣誉。" 
     },
     { 
-        word: "文言文现代文古诗词论述题=考题内容", 
-        pinyin: "wén yán wén xiàn dài wén gǔ shī cí lùn shù tí = kǎo tí nèi róng", 
+        word: "文言文 现代文 古诗词 论述题=考题内容", 
+        pinyin: "wén yán wén xiàn dài wén gǔ shī cí lùn shù tí", 
         defZh: "整套华文考卷中分解的各类题型设题范畴。（12字→4字，或缩为“试卷题型”）", 
         defEn: "Examination components", 
         defBm: "Kandungan kertas peperiksaan", 
         example: "模考卷涵盖了文言文、现代散文、古典诗歌与论述题。 → 模考涵盖全套考题内容。" 
     },
     { 
-        word: "森林湿地海洋草原荒漠=生态系统", 
-        pinyin: "sēn lín shī dì hǎi yáng cǎo yuán huāng mò = shēng tài xì tǒng", 
+        word: "森林 湿地 海洋 草原 荒漠=生态系统", 
+        pinyin: "sēn lín shī dì hǎi yáng cǎo yuán huāng mò", 
         defZh: "自然界由生物群落与外界无机环境构成的综合体。（10字→4字）", 
         defEn: "Ecosystems", 
         defBm: "Ekosistem alam", 
         example: "科学家系统考察了当地的森林、湿地、近海与草原环境。 → 科学家考察了各生态系统。" 
     },
     { 
-        word: "工伤医疗养老失业生育=五险", 
-        pinyin: "gōng shāng yī liáo yǎng lǎo shī yè shēng yù = wǔ xiǎn", 
+        word: "工伤 医疗 养老 失业 生育=五险", 
+        pinyin: "gōng shāng yī liáo yǎng lǎo shī yè shēng yù", 
         defZh: "国家社会保障制度中强制企业投保的五类法定保险。（10字→2字，亦可缩为“社会保障”）", 
         defEn: "Five social insurances", 
         defBm: "Lima insurans perlindungan sosial", 
         example: "正规劳动合同按律规定保障职员的工伤、医疗与养老保险。 → 合同足额缴纳五险。" 
     },
     { 
-        word: "重阳中秋端午清明春节=传统节日", 
-        pinyin: "chóng yáng zhōng qiū duān wǔ qīng míng chūn jié = chuán tǒng jié rì", 
+        word: "重阳 中秋 端午 清明 春节=传统节日", 
+        pinyin: "chóng yáng zhōng qiū duān wǔ qīng míng chūn jié", 
         defZh: "民族世代相传、带有浓厚习俗的周期性节庆。（10字→4字）", 
         defEn: "Traditional festivals", 
         defBm: "Perayaan tradisi", 
         example: "华人历来重视欢度重阳、中秋、端午、清明与春节。 → 华人重视传统节日。" 
     },
     { 
-        word: "水星金星火星木星土星天王星海王星=太阳系行星", 
-        pinyin: "shuǐ xīng jīn xīng huǒ xīng mù xīng tǔ xīng tiān wáng xīng hǎi wáng xīng = tài yáng xì xíng xīng", 
+        word: "水星 金星 火星 木星 土星 天王星 海王星=太阳系行星", 
+        pinyin: "shuǐ xīng jīn xīng huǒ xīng mù xīng tǔ xīng tiān wáng xīng hǎi wáng xīng", 
         defZh: "环绕太阳运行且达到流体静力平衡的八大/主要行星。（16字→5字，亦可缩为“各大行星”）", 
         defEn: "Planets of the solar system", 
         defBm: "Planet sistem suria", 
         example: "天文台望远镜捕捉到了水星、金星、火星与木星的轨道。 → 望远镜对准太阳系行星。" 
     },
     { 
-        word: "行书草书隶书楷书篆书=五大书体", 
-        pinyin: "xíng shū cǎo shū lì shū kǎi shū zhuàn shū = wǔ dà shū tǐ", 
+        word: "行书 草书 隶书 楷书 篆书=五大书体", 
+        pinyin: "xíng shū cǎo shū lì shū kǎi shū zhuàn shū", 
         defZh: "中国汉字书法发展历程中形成的最核心五种字形流派。（10字→4字，或缩为“书法各体”）", 
         defEn: "Five script styles of Chinese calligraphy", 
         defBm: "Lima gaya seni khat Cina", 
         example: "书法大师随心挥洒，通晓行书、草书、隶书、楷书与篆书。 → 大师通晓五大书体。" 
     },
     { 
-        word: "风能太阳能水能地热能生物质能=清洁能源", 
-        pinyin: "fēng néng tài yáng néng shuǐ néng dì rè néng shēng wù zhì néng = qīng jié néng yuán", 
+        word: "风能 太阳能 水能 地热能 生物质能=清洁能源", 
+        pinyin: "fēng néng tài yáng néng shuǐ néng dì rè néng shēng wù zhì néng", 
         defZh: "不排放或极少排放污染温室气体的可再生绿色能源。（15字→4字，亦可缩为“绿能”）", 
         defEn: "Clean energy / Green energy", 
         defBm: "Tenaga bersih / Tenaga hijau", 
         example: "电网大力采购并入来自风能、太阳能与地热能所发的电力。 → 国家大力开发清洁能源。" 
     },
     { 
-        word: "铁矿铜矿铝土矿锡矿铅锌矿=金属矿产", 
-        pinyin: "tiě kuàng tóng kuàng lǚ tǔ kuàng xī kuàng qiān xīn kuàng = jīn shǔ kuàng chǎn", 
+        word: "铁矿 铜矿 铝土矿 锡矿 铅锌矿=金属矿产", 
+        pinyin: "tiě kuàng tóng kuàng lǚ tǔ kuàng xī kuàng qiān xīn kuàng", 
         defZh: "地下经地质作用开采可提炼出工业纯金属的矿石资源。（13字→4字）", 
         defEn: "Metallic mineral resources", 
         defBm: "Galian logam", 
         example: "山脉底下深埋着储量极为可观的铁矿、铜矿与锡矿。 → 该地蕴藏丰富金属矿产。" 
     },
     { 
-        word: "散文诗歌小说戏剧剧本=文学体裁", 
-        pinyin: "sǎn wén shī gē xiǎo shuō xì jù jù běn = wén xué tǐ cái", 
+        word: "散文 诗歌 小说 戏剧剧本=文学体裁", 
+        pinyin: "sǎn wén shī gē xiǎo shuō xì jù jù běn", 
         defZh: "按文学作品的表现形式与结构分类的四大样式。（10字→4字，亦可缩为“文学作品”）", 
         defEn: "Literary genres", 
         defBm: "Genre sastera", 
         example: "作家一生笔耕不辍，涉猎散文、诗歌、长篇小说与戏剧剧本。 → 作家精通各类文学体裁。" 
     },
     { 
-        word: "汉族马来族印度族原住民族=多元种族", 
-        pinyin: "hàn zú mǎ lái zú yìn dù zú yuán zhù mín zú = duō yuán zhǒng zú", 
+        word: "汉族 马来族 印度族 原住民族=多元种族", 
+        pinyin: "hàn zú mǎ lái zú yìn dù zú yuán zhù mín zú", 
         defZh: "把共同生息繁衍在一个国家的多个民族实体合并概括。（12字→4字）", 
         defEn: "Multi-ethnic / Multiple races", 
         defBm: "Masyarakat berbilang kaum", 
         example: "大马国情由汉族、马来族、印度族与原住民族共同构成。 → 大马是多元种族国家。" 
     },
     { 
-        word: "吉他小提琴大提琴手风琴单簧管=西洋乐器", 
-        pinyin: "jí tā xiǎo tí qín dà tí qín shǒu fēng qín dān huáng guǎn = xī yáng yuè qì", 
+        word: "吉他 小提琴 大提琴 手风琴 单簧管=西洋乐器", 
+        pinyin: "jí tā xiǎo tí qín dà tí qín shǒu fēng qín dān huáng guǎn", 
         defZh: "源自西方管弦乐与现代声乐体系的演奏乐器大类。（13字→4字）", 
         defEn: "Western musical instruments", 
         defBm: "Alat muzik barat", 
         example: "音乐室内陈列着整排吉他、小提琴、大提琴与单簧管。 → 乐团配备全套西洋乐器。" 
     },
     { 
-        word: "高血压冠心病糖尿病高血脂=慢性疾病", 
-        pinyin: "gāo xuè yā guān xīn bìng táng niào bìng gāo xuè zhǐ = màn xìng jí bìng", 
+        word: "高血压 冠心病 糖尿病 高血脂=慢性疾病", 
+        pinyin: "gāo xuè yā guān xīn bìng táng niào bìng gāo xuè zhǐ", 
         defZh: "把长期困扰人体、发展缓慢且难于根治的器质性病症统括。（13字→4字，亦可缩为“慢病”）", 
         defEn: "Chronic diseases", 
         defBm: "Penyakit kronik", 
         example: "长者随着年岁渐长常饱受高血压、冠心病与糖尿病之苦。 → 长者易受慢性疾病困扰。" 
     },
     { 
-        word: "语文数学英语物理化学历史地理=基础学科", 
-        pinyin: "yǔ wén shù xué yīng yǔ wù lǐ huà xué lì shǐ dì lǐ = jī chǔ xué kē", 
+        word: "语文 数学 英语 物理 化学 历史 地理=基础学科", 
+        pinyin: "yǔ wén shù xué yīng yǔ wù lǐ huà xué lì shǐ dì lǐ", 
         defZh: "中学生在基础教育阶段必修的核心知识门类。（14字→4字，亦可缩为“中学各科”）", 
         defEn: "Basic academic subjects", 
         defBm: "Mata pelajaran teras", 
         example: "中学教育旨在为学生筑牢语文、数学、英语、物理与历史功底。 → 中学重视夯实基础学科。" 
     },
     { 
-        word: "电视机洗衣机电冰箱微波炉吸尘器=家用电器", 
-        pinyin: "diàn shì jī xǐ yī jī diàn bīng xiāng wēi bō lú xī chén qì = jiā yòng diàn qì", 
+        word: "电视机 洗衣机 电冰箱 微波炉 吸尘器=家用电器", 
+        pinyin: "diàn shì jī xǐ yī jī diàn bīng xiāng wēi bō lú xī chén qì", 
         defZh: "在家庭日常生活中使用的各类电气设备机械。（15字→4字，亦可缩为“家电”）", 
         defEn: "Household appliances", 
         defBm: "Peralatan elektrik rumah", 
         example: "新居落成后，主人添置了电视机、洗衣机、电冰箱与微波炉。 → 主人为新居购置家用电器。" 
     },
     { 
-        word: "头盔护膝护肘手套护目镜=防护装备", 
-        pinyin: "tóu kuī hù xī hù zhǒu shǒu tào hù mù jìng = fáng hù zhuāng bèi", 
+        word: "头盔 护膝 护肘 手套 护目镜=防护装备", 
+        pinyin: "tóu kuī hù xī hù zhǒu shǒu tào hù mù jìng", 
         defZh: "作业或运动时用以保护人身免受撞击伤害的安全器具。（11字→4字，或缩为“护具”）", 
         defEn: "Protective equipment / Gear", 
         defBm: "Peralatan perlindungan diri", 
         example: "工人进入施工现场前必须戴好头盔、护膝、手套与护目镜。 → 工人入场须佩戴防护装备。" 
     },
     { 
-        word: "打骂折磨饥饿恐吓囚禁=残酷虐待", 
-        pinyin: "dǎ mà zhé mó jī è kǒng hè qiú jìn = cán kù nüè dài", 
+        word: "打骂 折磨 饥饿 恐吓 囚禁=残酷虐待", 
+        pinyin: "dǎ mà zhé mó jī è kǒng hè qiú jìn", 
         defZh: "在肉体与精神上对弱小个体施加的多维度暴虐行径。（10字→4字，亦可缩为“虐待”）", 
         defEn: "Cruel abuse / Maltreatment", 
         defBm: "Penderaan kejam", 
         example: "养父母长期对幼童施以打骂、折磨、饥饿、恐吓与非法囚禁。 → 幼童遭受残酷虐待。" 
     },
     { 
-        word: "钻戒项链耳环金镯领带夹=贵重物品", 
-        pinyin: "zuàn jiè xiàng liàn ěr huán jīn zhuó lǐng dài jiā = guì zhòng wù pǐn", 
+        word: "钻戒 项链 耳环 金镯 领带夹=贵重物品", 
+        pinyin: "zuàn jiè xiàng liàn ěr huán jīn zhuó lǐng dài jiā", 
         defZh: "价值高昂、易随身携带且易被盗窃的财物首饰。（11字→4字，亦可缩为“贵重财物”）", 
         defEn: "Valuables", 
         defBm: "Barangan berharga", 
         example: "住客外出时将钻戒、项链、金镯与现金锁入保险箱。 → 住客把贵重物品锁入保险柜。" 
     },
     { 
-        word: "水星金星地球火星木星土星天王星海王星=八大行星", 
-        pinyin: "shuǐ jīn dì huǒ mù tǔ tiān hǎi = bā dà xíng xīng", 
-        defZh: "天文学上围着太阳公转的八个最大行星实体。（18字→4字）", 
+        word: "水星 金星 地球 火星 木星 土星 天王星 海王星=八大行星", 
+        pinyin: "shuǐ xīng jīn xīng dì qiú huǒ xīng mù xīng tǔ xīng tiān wáng xīng hǎi wáng xīng", 
+        defZh: "天文学上围着太阳公转的八个最大行星实体。（16字→4字）", 
         defEn: "Eight major planets", 
         defBm: "Lapan planet utama", 
         example: "太阳系的中心恒星四周运行着水星、金星、地球与火星等星体。 → 太阳系拥有八大行星。" 
     },
     { 
-        word: "金斧银斧铜斧铁斧石斧=各式工具", 
-        pinyin: "jīn fǔ yín fǔ tóng fǔ tiě fǔ shí fǔ = gè shì gōng jù", 
+        word: "金斧 银斧 铜斧 铁斧 石斧=各式工具", 
+        pinyin: "jīn fǔ yín fǔ tóng fǔ tiě fǔ shí fǔ", 
         defZh: "把列举的多款不同质地与形制的劈砍用具统摄。（10字→4字，或缩为“斧具工具”）", 
         defEn: "Various tools", 
         defBm: "Pelbagai jenis perkakas", 
         example: "铁匠铺墙上悬挂着金斧、银斧、铜斧、铁斧和原始石斧。 → 铺里挂满各式工具。" 
     },
     { 
-        word: "东海西海南海北海=四海", 
-        pinyin: "dōng hǎi xī hǎi nán hǎi běi hǎi = sì hǎi", 
+        word: "东海 西海 南海 北海=四海", 
+        pinyin: "dōng hǎi xī hǎi nán hǎi běi hǎi", 
         defZh: "古人指围绕陆地四周的广阔海域，现泛指天下全国各地。（8字→2字）", 
         defEn: "Four Seas / Whole world", 
         defBm: "Empat lautan / Seluruh pelosok dunia", 
         example: "商贾名士的足迹踏遍了东海、南海、西海与极北之海。 → 游子名士名扬四海。" 
     },
     { 
-        word: "松柏银杏水杉红杉=珍稀树木", 
-        pinyin: "sōng bǎi yín xìng shuǐ shān hóng shān = zhēn xī shù mù", 
+        word: "松柏 银杏 水杉 红杉=珍稀树木", 
+        pinyin: "sōng bǎi yín xìng shuǐ shān hóng shān", 
         defZh: "生长周期长、具有极高科研生态价值的木本植物。（10字→4字，或缩为“古木树种”）", 
         defEn: "Rare trees", 
         defBm: "Pokok-pokok hutan yang jarang ditemui", 
         example: "原始森林深处挺立着成群的松柏、古银杏、水杉与红杉。 → 森林生长着珍稀树木。" 
     },
     { 
-        word: "羊肉牛肉猪肉鸡肉鸭肉=肉类食品", 
-        pinyin: "yáng ròu niú ròu zhū ròu jī ròu yā ròu = ròu lèi shí pǐn", 
+        word: "羊肉 牛肉 猪肉 鸡肉 鸭肉=肉类食品", 
+        pinyin: "yáng ròu niú ròu zhū ròu jī ròu yā ròu", 
         defZh: "源自可食用动物肌肉与脂肪组织的食物大类。（10字→4字，亦可缩为“肉食”）", 
         defEn: "Meat products", 
         defBm: "Produk daging", 
         example: "冷库里常年恒温储藏着大量的羊肉、牛肉、猪肉与鸡肉。 → 冷库储备丰富肉类食品。" 
     },
     { 
-        word: "茶壶茶杯茶盘茶匙茶道六君子=茶具", 
-        pinyin: "chá hú chá bēi chá pán chá chí liù jūn zǐ = chá jù", 
+        word: "茶壶 茶杯 茶盘 茶匙 茶道六君子=茶具", 
+        pinyin: "chá hú chá bēi chá pán chá chí chá dào liù jūn zǐ", 
         defZh: "冲泡品鉴各类茶叶所必备的器皿与配件统称。（13字→2字）", 
         defEn: "Tea set / Tea utensils", 
         defBm: "Set peralatan membancuh teh", 
         example: "茶艺师在案几上齐整排开茶壶、茶杯、茶盘与茶匙。 → 案几上齐整备好茶具。" 
     },
     { 
-        word: "汉服唐装旗袍马褂长衫=传统服饰", 
-        pinyin: "hàn fú táng zhuāng qí páo mǎ guà cháng shān = chuán tǒng fú shì", 
+        word: "汉服 唐装 旗袍 马褂 长衫=传统服饰", 
+        pinyin: "hàn fú táng zhuāng qí páo mǎ guà cháng shān", 
         defZh: "中华民族在不同历史朝代沿袭下来的特色衣装风格。（10字→4字）", 
         defEn: "Traditional costumes / Traditional attire", 
         defBm: "Pakaian tradisional", 
         example: "新春庙会上民众纷纷身穿汉服、唐装、旗袍与传统长衫。 → 庙会民众身穿传统服饰。" 
     },
     { 
-        word: "打鼓吹号拉琴弹筝敲锣=奏乐", 
-        pinyin: "dǎ gǔ chuī hào lā qín tán zhēng qiāo luó = zòu yuè", 
+        word: "打鼓 吹号 拉琴 弹筝 敲锣=奏乐", 
+        pinyin: "dǎ gǔ chuī hào lā qín tán zhēng qiāo luó", 
         defZh: "乐手各自操持不同乐器协同发声演奏乐曲。（10字→2字，或缩为“演奏音乐”）", 
         defEn: "Play music", 
         defBm: "Memainkan muzik", 
         example: "迎亲队伍一路上打鼓、吹号、拉琴、弹筝并敲响铜锣。 → 迎亲队伍沿街奏乐。" 
     },
     { 
-        word: "行礼作揖下跪磕头鞠躬=施礼", 
-        pinyin: "xíng lǐ zuò yī xià guì kē tóu jū gōng = shī lǐ", 
+        word: "行礼 作揖 下跪 磕头 鞠躬=施礼", 
+        pinyin: "xíng lǐ zuò yī xià guì kē tóu jū gōng", 
         defZh: "表达极度尊敬、敬畏或降服的肢体礼仪动作汇总。（10字→2字，亦可缩为“行礼”）", 
         defEn: "Perform formal salute / Bow respectfully", 
         defBm: "Memberi hormat secara istiadat", 
         example: "百官步入金銮殿内，毕恭毕敬地作揖、下跪、磕头与鞠躬。 → 百官入殿肃立施礼。" 
     },
     { 
-        word: "高楼大厦亭台楼阁庙宇殿堂=建筑群", 
-        pinyin: "gāo lóu dà shà tíng tái lóu gé miào yǔ diàn táng = jiàn zhù qún", 
+        word: "高楼大厦 亭台楼阁 庙宇殿堂=建筑群", 
+        pinyin: "gāo lóu dà shà tíng tái lóu gé miào yǔ diàn táng", 
         defZh: "聚集排列成整片规模的多样式房屋与建筑构造。（13字→3字，亦可缩为“各式建筑”）", 
         defEn: "Architectural complex", 
         defBm: "Kompleks bangunan", 
         example: "古城内密布着雄伟的高楼大厦、亭台楼阁与庙宇殿堂。 → 古城屹立宏伟建筑群。" 
     },
     { 
-        word: "步兵骑兵弓箭手炮兵工兵=兵种", 
-        pinyin: "bù bīng qí bīng gōng jiàn shǒu pào bīng gōng bīng = bīng zhǒng", 
+        word: "步兵 骑兵 弓箭手 炮兵 工兵=兵种", 
+        pinyin: "bù bīng qí bīng gōng jiàn shǒu pào bīng gōng bīng", 
         defZh: "军队组织内部依据作战武器与战术任务划分的专业力量。（11字→2字，或缩为“作战部队”）", 
         defEn: "Military branches / Arms of the service", 
         defBm: "Cawangan tentera", 
         example: "主帅根据阵型需要有序调动步兵、骑兵、弓箭手与炮兵。 → 主帅统一调动各兵种。" 
     },
     { 
-        word: "推土机挖掘机起重机压路机翻斗车=工程机械", 
-        pinyin: "tuī tǔ jī wā jué jī qǐ zhòng jī yā lù jī fān dǒu chē = gōng chéng jī xiè", 
+        word: "推土机 挖掘机 起重机 压路机 翻斗车=工程机械", 
+        pinyin: "tuī tǔ jī wā jué jī qǐ zhòng jī yā lù jī fān dǒu chē", 
         defZh: "施工建造大型工程项目所使用的各类重型重型动力装备。（15字→4字）", 
         defEn: "Construction machinery", 
         defBm: "Jentera pembinaan berat", 
         example: "大坝工地上轰鸣开动着推土机、挖掘机、起重机与压路机。 → 工地上轰鸣着工程机械。" 
     },
     { 
-        word: "铜钱白银碎银银票金条=货币", 
-        pinyin: "tóng qián bái yín suì yín yín piào jīn tiáo = huò bì", 
+        word: "铜钱 白银 碎银 银票 金条=货币", 
+        pinyin: "tóng qián bái yín suì yín yín piào jīn tiáo", 
         defZh: "古代及现代市场上用作交换中介流通的法定支付手段。（10字→2字，亦可缩为“资金钱财”）", 
         defEn: "Currency / Money", 
         defBm: "Mata wang", 
         example: "账房箱内清点堆放着历年积攒的铜钱、碎银、银票与金条。 → 账房清点各类货币。" 
     },
     { 
-        word: "狮子老虎猎豹恶狼豺狗=猛兽", 
-        pinyin: "shī zi lǎo hǔ liè bào è láng chái gǒu = měng shòu", 
+        word: "狮子 老虎 猎豹 恶狼 豺狗=猛兽", 
+        pinyin: "shī zi lǎo hǔ liè bào è láng chái gǒu", 
         defZh: "体格健壮、性情凶狠残暴且具极强攻击杀伤力的野生肉食动物。（10字→2字，或缩为“凶兽”）", 
         defEn: "Beasts of prey / Wild beasts", 
         defBm: "Binatang buas", 
         example: "荒野密林深处隐藏着极具攻击性的狮子、老虎、恶狼与豺狗。 → 密林出没危险猛兽。" 
     },
     { 
-        word: "麻雀鸽子八哥杜鹃喜鹊=飞鸟", 
-        pinyin: "má què gē zi bā ge dù juān xǐ què = fēi niǎo", 
+        word: "麻雀 鸽子 八哥 杜鹃 喜鹊=飞鸟", 
+        pinyin: "má què gē zi bā ge dù juān xǐ què", 
         defZh: "在天空中展翅翱翔或栖息于枝头的羽禽动物统称。（10字→2字，亦可缩为“鸟禽”）", 
         defEn: "Birds", 
         defBm: "Burung-burung", 
         example: "清晨山谷林梢间盘旋聚集了无数麻雀、鸽子、八哥与杜鹃。 → 清晨林梢飞鸟欢唱。" 
     },
     { 
-        word: "草鱼鲤鱼鲫鱼鲢鱼黑鱼=淡水鱼", 
-        pinyin: "cǎo yú lǐ yú jì yú lián yú hēi yú = dàn shuǐ yú", 
+        word: "草鱼 鲤鱼 鲫鱼 鲢鱼 黑鱼=淡水鱼", 
+        pinyin: "cǎo yú lǐ yú jì yú lián yú hēi yú", 
         defZh: "栖息生息在内河、湖泊与池塘等低盐度水域中的鱼类。（10字→3字）", 
         defEn: "Freshwater fish", 
         defBm: "Ikan air tawar", 
         example: "养殖基地池塘里密密麻麻养满了草鱼、鲤鱼、鲫鱼与鲢鱼。 → 池塘盛产丰富淡水鱼。" 
     },
     { 
-        word: "金枪鱼带鱼三文鱼黄花鱼鳕鱼=深海鱼", 
-        pinyin: "jīn qiāng yú dài yú sān wén yú huáng huā yú xuě yú = shēn hǎi yú", 
+        word: "金枪鱼 带鱼 三文鱼 黄花鱼 鳕鱼=深海鱼", 
+        pinyin: "jīn qiāng yú dài yú sān wén yú huáng huā yú xuě yú", 
         defZh: "生活栖息在远洋深海水域中供商业捕捞的咸水海鱼。（12字→3字）", 
         defEn: "Deep-sea fish", 
         defBm: "Ikan laut dalam", 
         example: "远洋渔业拖网带回大宗的金枪鱼、三文鱼、黄花鱼与鳕鱼。 → 远洋拖网捕获大量深海鱼。" 
     },
     { 
-        word: "香油酱油米醋辣椒油花椒粉=调味品", 
-        pinyin: "xiāng yóu jiàng yóu mǐ cù là jiāo yóu huā jiāo fěn = tiáo wèi pǐn", 
+        word: "香油 酱油 米醋 辣椒油 花椒粉=调味品", 
+        pinyin: "xiāng yóu jiàng yóu mǐ cù là jiāo yóu huā jiāo fěn", 
         defZh: "烹饪食物时用以去除腥气、提鲜并改善滋味的配料辅料。（13字→3字，或缩为“调料”）", 
         defEn: "Condiments / Seasonings", 
         defBm: "Bahan perasa masakan", 
         example: "灶台上整齐放着香油、酱油、米醋、辣椒油与花椒粉。 → 灶台备齐各式调味品。" 
     },
     { 
-        word: "背诵朗读默写抄写临摹=语言训练", 
-        pinyin: "bèi sòng lǎng dú mò xiě chāo xiě lín mó = yǔ yán xùn liàn", 
+        word: "背诵 朗读 默写 抄写 临摹=语言训练", 
+        pinyin: "bèi sòng lǎng dú mò xiě chāo xiě lín mó", 
         defZh: "在母语或外语教学中常态化实施的基础技能练习。（10字→4字，或缩为“课业练习”）", 
         defEn: "Language practice", 
         defBm: "Latihan kemahiran bahasa", 
         example: "老师要求学生课后反复完成背诵、朗读、默写与抄写。 → 老师布置严格语言训练。" 
     },
     { 
-        word: "推搡撕扯踢打扇耳光扭打=肢体冲突", 
-        pinyin: "tuī sǎng sī chě tī dǎ shān ěr guāng niǔ dǎ = zhī tǐ chōng tū", 
+        word: "推搡 撕扯 踢打 扇耳光 扭打=肢体冲突", 
+        pinyin: "tuī sǎng sī chě tī dǎ shān ěr guāng niǔ dǎ", 
         defZh: "双方或多方在愤怒冲动之下发生的暴力肉搏争斗打架。（11字→4字，亦可缩为“斗殴”）", 
         defEn: "Physical altercation", 
         defBm: "Pergaduhan fizikal", 
         example: "两派不良少年因琐事争执，最终演变成推搡、撕扯与踢打。 → 琐事引发激烈肢体冲突。" 
     },
     { 
-        word: "打劫敲诈勒索绑架偷窃=违法犯罪", 
-        pinyin: "dǎ jié qiāo zhà lè suǒ bǎng jià tōu qiè = wéi fǎ fàn zuì", 
+        word: "打劫 敲诈 勒索 绑架 偷窃=违法犯罪", 
+        pinyin: "dǎ jié qiāo zhà lè suǒ bǎng jià tōu qiè", 
         defZh: "违背国家刑事法规、破坏社会秩序应受严惩的严重行径。（10字→4字，或缩为“犯罪活动”）", 
         defEn: "Crimes / Illegal offenses", 
         defBm: "Jenayah salah undang-undang", 
         example: "黑帮盘踞城郊，疯狂实施打劫、敲诈勒索、绑架与偷窃。 → 警方严打黑帮违法犯罪。" 
     },
     { 
-        word: "买股票买基金买债券买房产=金融投资", 
-        pinyin: "mǎi gǔ piào mǎi jī jīn mǎi zhài quàn mǎi fáng chǎn = jīn róng tóu zī", 
+        word: "买股票 买基金 买债券 买房产=金融投资", 
+        pinyin: "mǎi gǔ piào mǎi jī jīn mǎi zhài quàn mǎi fáng chǎn", 
         defZh: "将手头结余资产投放到各类理财标的以期保值增值的运作。（12字→4字，亦可缩为“投资理财”）", 
         defEn: "Financial investment", 
         defBm: "Pelaburan kewangan", 
         example: "上班族每月把部分积蓄分配用于买股票、基金、债券与房产。 → 白领积极进行金融投资。" 
     },
     { 
-        word: "唱歌跳舞说相声变魔术演杂技=文艺演出", 
-        pinyin: "chàng gē tiào wǔ shuō xiàng sheng biàn mó shù yǎn zá jì = wén yì yǎn chū", 
+        word: "唱歌 跳舞 说相声 变魔术 演杂技=文艺演出", 
+        pinyin: "chàng gē tiào wǔ shuō xiàng sheng biàn mó shù yǎn zá jì", 
         defZh: "在舞台舞台上为公众奉献的综合性艺术文化表演活动。（13字→4字，亦可缩为“文艺汇演”）", 
         defEn: "Cultural and artistic performances", 
         defBm: "Persembahan kebudayaan seni", 
         example: "校庆晚会上学子们各显其能，唱歌、跳舞、变魔术并演杂技。 → 晚会呈现精彩文艺演出。" 
     },
     { 
-        word: "水土流失沙漠化酸雨温室效应=环境问题", 
-        pinyin: "shuǐ tǔ liú shī shā mò huà suān yǔ wēn shì xiào yìng = huán jìng wèn tí", 
+        word: "水土流失 沙漠化 酸雨 温室效应=环境问题", 
+        pinyin: "shuǐ tǔ liú shī shā mò huà suān yǔ wēn shì xiào yìng", 
         defZh: "因人类不合理开发活动引发的生态失衡与全球性危机。（13字→4字，亦可缩为“生态危机”）", 
         defEn: "Environmental problems", 
         defBm: "Masalah alam sekitar", 
         example: "过度砍伐与工业排污造成了严重的水土流失、酸雨与温室效应。 → 人类面临严峻环境问题。" 
     },
     { 
-        word: "打仗战乱内讧叛乱兵变=社会动荡", 
-        pinyin: "dǎ zhàng zhàn luàn nèi hòng pàn luàn bīng biàn = shè huì dòng dàng", 
+        word: "打仗 战乱 内讧 叛乱 兵变=社会动荡", 
+        pinyin: "dǎ zhàng zhàn luàn nèi hòng pàn luàn bīng biàn", 
         defZh: "国家政局不稳、武装交火连年不断导致社会陷入恐慌混乱。（10字→4字，亦可缩为“战乱”）", 
         defEn: "Social unrest / Turbulence", 
         defBm: "Ketidakstabilan sosial", 
         example: "该小国常年陷于打仗、武装割据、内讧与士兵兵变之中。 → 该国长期处于社会动荡。" 
     },
     { 
-        word: "失业贫穷通胀物价飞涨疾病=民生困境", 
-        pinyin: "shī yè pín qióng tōng zhàng wù jià fēi zhǎng jí bìng = mín shēng kùn jìng", 
+        word: "失业 贫穷 通胀 物价飞涨 疾病=民生困境", 
+        pinyin: "shī yè pín qióng tōng zhàng wù jià fēi zhǎng jí bìng", 
         defZh: "宏观经济严重萧条期大众在生计维系上遭受的多重磨难。（12字→4字，亦可缩为“民生艰难”）", 
         defEn: "Livelihood hardships", 
         defBm: "Kesempitan hidup rakyat", 
         example: "经济大萧条使百姓深陷大面积失业、极端贫困与通货膨胀。 → 百姓陷入深重民生困境。" 
     },
     { 
-        word: "开会讨论座谈磋商辩论=协商交流", 
-        pinyin: "kāi huì tǎo lùn zuò tán cuō shāng biàn lùn = xié shāng jiāo liú", 
+        word: "开会 讨论 座谈 磋商 辩论=协商交流", 
+        pinyin: "kāi huì tǎo lùn zuò tán cuō shāng biàn lùn", 
         defZh: "各利益相关方坐在一起通过言语交换意见谋求共识。（10字→4字，或缩为“商讨”）", 
         defEn: "Consultation and exchange", 
         defBm: "Perundingan dan pertukaran pandangan", 
         example: "各党派代表齐聚圆桌，经过多轮开会、讨论、座谈与闭门磋商。 → 代表开展多轮协商交流。" 
     },
     { 
-        word: "修筑桥梁铺设道路开挖运河修建堤坝=基础设施建设", 
-        pinyin: "xiū qiáo pū lù kāi yùn hé jiàn dī = jī chǔ shè shī jiàn shè", 
+        word: "修筑桥梁 铺设道路 开挖运河 修建堤坝=基础设施建设", 
+        pinyin: "xiū zhù qiáo liáng pū shè dào lù kāi wā yùn hé xiū jiàn dī bà", 
         defZh: "为国家社会运转提供物质支撑的重大公共土木工程工程。（16字→6字，亦可缩为“基建”）", 
         defEn: "Infrastructure development", 
         defBm: "Pembangunan infrastruktur asas", 
         example: "国家财政拨出巨资用于修筑桥梁、铺设公路与修建水利堤坝。 → 财政大力投入基础设施建设。" 
     },
     { 
-        word: "敲门打招呼握手微笑致意鞠躬=礼貌举止", 
-        pinyin: "qiāo mén zhāo hu wò shǒu wēi xiào jū gōng = lǐ mào jǔ zhǐ", 
+        word: "敲门 打招呼 握手 微笑致意 鞠躬=礼貌举止", 
+        pinyin: "qiāo mén dǎ zhāo hu wò shǒu wēi xiào zhì yì jū gōng", 
         defZh: "在社会交往中所展现出尊重他人、温和有礼的优良行为规范。（13字→4字，或缩为“文明礼貌”）", 
         defEn: "Polite manners", 
         defBm: "Tingkah laku sopan", 
         example: "见习生初入职场处处注意敲门、微笑、主动握手与礼貌鞠躬。 → 青年展现良好礼貌举止。" 
     },
     { 
-        word: "算盘计算器计算机超级电脑=计算工具", 
-        pinyin: "suàn pán jì suàn qì jì suàn jī chāo jǐ diàn nǎo = jì suàn gōng jù", 
+        word: "算盘 计算器 计算机 超级电脑=计算工具", 
+        pinyin: "suàn pán jì suàn qì jì suàn jī chāo jí diàn nǎo", 
         defZh: "人类在科学研究与数据处理中所使用的辅助运算器械。（13字→4字）", 
         defEn: "Computing tools", 
         defBm: "Alat pengiraan matematik", 
         example: "人类数据处理演变从古老的传统算盘跨越到现代超级电脑。 → 计算工具日新月异。" 
     },
     { 
-        word: "棉布丝绸麻布毛呢化纤=纺织面料", 
-        pinyin: "mián bù sī chóu má bù máo ní huà xiān = fǎng zhī miàn liào", 
+        word: "棉布 丝绸 麻布 毛呢 化纤=纺织面料", 
+        pinyin: "mián bù sī chóu má bù máo ní huà xiān", 
         defZh: "经纺织加工用于缝制服装被褥的各类织物布料材料。（10字→4字，亦可缩为“布料”）", 
         defEn: "Textile fabrics", 
         defBm: "Kain tekstil", 
         example: "裁缝铺货架上整卷陈列着精美的棉布、丝绸、麻布与毛呢。 → 铺里摆满各类纺织面料。" 
     },
     { 
-        word: "耕地播种施肥除草收割=农事劳作", 
-        pinyin: "gēng dì bō zhǒng shī féi chú cǎo shōu gē = nóng shì láo zuò", 
+        word: "耕地 播种 施肥 除草 收割=农事劳作", 
+        pinyin: "gēng dì bō zhǒng shī féi chú cǎo shōu gē", 
         defZh: "农家一年四季围绕农业生产土地所付出的整套体力劳动。（10字→4字，亦可缩为“务农”）", 
         defEn: "Agricultural work / Farm labor", 
         defBm: "Kerja pertanian harian", 
         example: "老农从早到晚弯着腰，在地头忙于耕地、播种、施肥与除草。 → 老农终日辛勤农事劳作。" 
     },
     { 
-        word: "打字排版印刷装订校对=出版流程", 
-        pinyin: "dǎ zì pái bǎn yìn shuā zhuāng dìng jiào duì = chū bǎn liú chéng", 
+        word: "打字 排版 印刷 装订 校对=出版流程", 
+        pinyin: "dǎ zì pái bǎn yìn shuā zhuāng dìng jiào duì", 
         defZh: "图书从原稿付诸流水线直到变成成品书籍装盒的一系列工序。（10字→4字，或缩为“书籍出版”）", 
         defEn: "Publishing process", 
         defBm: "Proses penerbitan buku", 
         example: "一部书稿问世必须经过繁琐的打字、排版、印刷、装订与校对。 → 书籍问世须经严格出版流程。" 
     },
     { 
-        word: "偷税漏税骗税抗税抗缴=涉税违法", 
-        pinyin: "tōu shuì lòu shuì piàn shuì kàng shuì = shè shuì wéi fǎ", 
+        word: "偷税 漏税 骗税 抗税抗缴=涉税违法", 
+        pinyin: "tōu shuì lòu shuì piàn shuì kàng shuì kàng jiǎo", 
         defZh: "违反国家税收法规、逃避抗拒履行缴纳税金法定义务的行为。（10字→4字，或缩为“偷漏税”）", 
         defEn: "Tax evasion / Tax fraud", 
         defBm: "Kesalahan melanggar undang-undang cukai", 
         example: "税务稽查局对企业暗中偷税、虚开发票与骗税行为实施重罚。 → 税务局重拳查处涉税违法。" 
     },
     { 
-        word: "金条银锭现钞存单期权=金融资产", 
-        pinyin: "jīn tiáo yín dìng xiàn chāo cún dān qī quán = jīn róng zī chǎn", 
+        word: "金条 银锭 现钞 存单 期权=金融资产", 
+        pinyin: "jīn tiáo yín dìng xiàn chāo cún dān qī quán", 
         defZh: "个人或企业拥有、具备流动性与高经济价值的财产形态。（10字→4字，或缩为“资产”）", 
         defEn: "Financial assets", 
         defBm: "Aset kewangan", 
         example: "富商将遗产合理配置分散在金条、现钞、大额存单与期权中。 → 富商持有雄厚金融资产。" 
     },
     { 
-        word: "贪小便宜损人利己斤斤计较借钱不还=自私自利", 
-        pinyin: "tān xiǎo pián yi sǔn rén lì jǐ = zì sī zì lì", 
+        word: "贪小便宜 损人利己 斤斤计较 借钱不还=自私自利", 
+        pinyin: "tān xiǎo pián yi sǔn rén lì jǐ jīn jīn jì jiào jiè qián bù huán", 
         defZh: "全心顾及自身利益，置集体道义与他人死活于不顾的恶劣品性。（16字→4字，亦可缩为“自私”）", 
         defEn: "Selfish and self-serving", 
         defBm: "Mementingkan diri sendiri", 
         example: "他在处事中处处贪小便宜、损人利己且对蝇头小利斤斤计较。 → 此人品行极端自私自利。" 
     },
     { 
-        word: "造假造谣传谣挑拨离间无中生有=恶意中伤", 
-        pinyin: "zào jiǎ zào yáo chuán yáo tiáo bō = è yì zhòng shāng", 
+        word: "造假造谣 传谣 挑拨离间 无中生有=恶意中伤", 
+        pinyin: "zào jiǎ zào yáo chuán yáo tiáo bō lí jiàn wú zhōng shēng yǒu", 
         defZh: "通过虚构不实言论、败坏他人名誉形象的不道德乃至违法举动。（15字→4字，亦可缩为“造谣毁谤”）", 
         defEn: "Malicious slander", 
         defBm: "Fitnah jahat / Menjatuhkan reputasi", 
         example: "不良自媒体为了博取眼球，不惜在网络上造假、造谣与挑拨离间。 → 不良分子肆意恶意中伤。" 
     },
     { 
-        word: "扶老携幼接济难民施粥赠药收养孤儿=行善积德", 
-        pinyin: "fú lǎo xié yòu jiē jì nàn mín shī zhōu = xíng shàn jī dé", 
+        word: "扶老携幼 接济难民 施粥赠药 收养孤儿=行善积德", 
+        pinyin: "fú lǎo xié yòu jiē jì nàn mín shī zhōu zèng yào shōu yǎng gū ér", 
         defZh: "心怀慈悲热心慈善，主动救济扶持弱小苦难众生的崇高义举。（16字→4字，亦可缩为“慈善义举”）", 
         defEn: "Do good deeds / Charity", 
         defBm: "Berbuat amal kebajikan", 
         example: "侨领终其一生坚持出资扶老携幼、接济贫寒、施粥赠药并收养孤雏。 → 侨领一生矢志行善积德。" 
     },
     { 
-        word: "狂喜狂怒痛哭流涕手舞足蹈失魂落魄=情绪失控", 
-        pinyin: "kuáng xǐ kuáng nù tòng kū shǒu wǔ = qíng xù shī kòng", 
+        word: "狂喜狂怒 痛哭流涕 手舞足蹈 失魂落魄=情绪失控", 
+        pinyin: "kuáng xǐ kuáng nù tòng kū liú tì shǒu wǔ zú dǎo shī hún luò pò", 
         defZh: "受到过重精神刺激导致自我理智防线崩塌、精神外露。（16字→4字）", 
         defEn: "Loss of emotional control", 
         defBm: "Hilang kawalan emosi", 
         example: "突遭破产噩耗，他当场痛哭流涕、捶胸顿足甚至失魂落魄。 → 当事人突闻噩耗情绪失控。" 
     },
     { 
-        word: "高楼倒塌桥梁断裂道路塌陷大坝决口=严重破坏", 
-        pinyin: "gāo lóu dào tā qiáo liáng duàn liè = yán zhòng pò huài", 
+        word: "高楼倒塌 桥梁断裂 道路塌陷 大坝决口=严重破坏", 
+        pinyin: "gāo lóu dǎo tā qiáo liáng duàn liè dào lù tā xiàn dà bà jué kǒu", 
         defZh: "剧烈地震或重型轰炸给公共物理硬件设施带来的致命摧毁。（16字→4字，亦可缩为“破坏殆尽”）", 
         defEn: "Severe destruction / Devastation", 
         defBm: "Kemusnahan teruk", 
         example: "强震过后，城中高楼倒塌、桥梁断裂、公路塌陷且大坝决口。 → 强震致使全城遭受严重破坏。" 
     },
     { 
-        word: "生辰八字算卦看相测字看风水=封建迷信", 
-        pinyin: "shēng chén bā zì suàn guà kàn xiàng = fēng jiàn mí xìn", 
+        word: "生辰八字 算卦看相 测字 看风水=封建迷信", 
+        pinyin: "shēng chén bā zì suàn guà kàn xiàng cè zì kàn fēng shuǐ", 
         defZh: "缺乏科学依据、依靠算命占卜预测未来祸福的旧时陋习观念。（14字→4字，亦可缩为“迷信活动”）", 
         defEn: "Feudal superstitions", 
         defBm: "Kepercayaan karut / Takhayul", 
         example: "遇病不去就医，反而花钱请巫师排生辰八字、算卦与看风水。 → 愚昧村民沉溺封建迷信。" 
     },
     { 
-        word: "不吃不喝不眠不休闭门不出=过度消沉", 
-        pinyin: "bù chī bù hē bù mián bù xiū = guò dù xiāo chén", 
+        word: "不吃不喝 不眠不休 闭门不出=过度消沉", 
+        pinyin: "bù chī bù hē bù mián bù xiū bì mén bù chū", 
         defZh: "遭遇重创后意志极其颓废沮丧、自我折磨与封闭精神状态。（13字→4字，亦可缩为“消沉颓废”）", 
         defEn: "Excessive depression / Morbid gloom", 
         defBm: "Kemurungan melampau", 
         example: "考研落榜后，他整月不吃不喝、不眠不休且整日闭门不出。 → 学子落榜后陷入过度消沉。" 
     },
     { 
-        word: "打猎捕鱼采摘野果挖掘草根=原始采集生活", 
-        pinyin: "dǎ liè bǔ yú cǎi yě guǒ = yuán shǐ cǎi jí shēng huó", 
+        word: "打猎捕鱼 采摘野果 挖掘草根=原始采集生活", 
+        pinyin: "dǎ liè bǔ yú cǎi zhāi yě guǒ wā jué cǎo gēn", 
         defZh: "人类在农耕文明诞生之前依托大自然自发生存的生产方式。（13字→6字，亦可缩为“原始生存”）", 
         defEn: "Primitive foraging life", 
         defBm: "Kehidupan memburu dan meramu purba", 
         example: "远古部落穴居山洞，每日全靠打猎、下河捕鱼与采摘野果维持生计。 → 远古先民过着原始采集生活。" 
     },
     { 
-        word: "山清水秀鸟语花香绿树成荫晴空万里=优美环境", 
-        pinyin: "shān qīng shuǐ xiù niǎo yǔ huā xiāng = yōu měi huán jìng", 
+        word: "山清水秀 鸟语花香 绿树成荫 晴空万里=优美环境", 
+        pinyin: "shān qīng shuǐ xiù niǎo yǔ huā xiāng lǜ shù chéng yīn qíng kōng wàn lǐ", 
         defZh: "风景如画、生态极为和谐幽静的大自然天然景致。（16字→4字，亦可缩为“风景优美”）", 
         defEn: "Beautiful natural environment", 
         defBm: "Persekitaran yang indah permai", 
         example: "度假山庄四周山清水秀、鸟语花香且四季绿树成荫。 → 游客陶醉于山庄的优美环境。" 
     },
     { 
-        word: "买菜做饭洗衣拖地照顾老人辅导孩子=操持家务", 
-        pinyin: "mǎi cài zuò fàn xǐ yī tuō dì = cāo chí jiā wù", 
+        word: "买菜做饭 洗衣拖地 照顾老人 辅导孩子=操持家务", 
+        pinyin: "mǎi cài zuò fàn xǐ yī tuō dì zhào gù lǎo rén fǔ dǎo hái zi", 
         defZh: "居家日常料理琐碎家庭生活事务的体力劳动与统筹照料。（16字→4字，亦可缩为“家务”）", 
         defEn: "Manage household chores", 
         defBm: "Menguruskan hal ehwal rumah tangga", 
         example: "母亲每天起早贪黑，买菜做饭、洗衣拖地并照顾老小。 → 母亲终日辛劳操持家务。" 
     },
     { 
-        word: "打鸣报晓下蛋筑巢孵卵啄虫=禽鸟习性", 
-        pinyin: "dǎ míng bào xiǎo xià dàn zhù cháo = qín niǎo xí xìng", 
+        word: "打鸣报晓 下蛋筑巢 孵卵 啄虫=禽鸟习性", 
+        pinyin: "dǎ míng bào xiǎo xià dàn zhù cháo fū luǎn zhuó chóng", 
         defZh: "鸡类鸟禽在大自然生存繁衍中展现出的固有生物行为规律。（13字→4字）", 
         defEn: "Avian habits / Bird behavior", 
         defBm: "Sifat dan tabiat semula jadi unggas", 
         example: "公鸡破晓打鸣、母鸡下蛋孵卵与啄食菜青虫乃是天生的。 → 观察记录野生禽鸟习性。" 
     },
     { 
-        word: "冷嘲热讽恶语相向冷眼旁观孤立排挤=校园霸凌", 
-        pinyin: "lěng cháo rè fěng è yǔ xiàng xiàng = xiào yuán bà líng", 
+        word: "冷嘲热讽 恶语相向 冷眼旁观 孤立排挤=校园霸凌", 
+        pinyin: "lěng cháo rè fěng è yǔ xiàng xiàng lěng yǎn páng guān gū lì pái jǐ", 
         defZh: "在学校环境内针对特定同伴长期施加的言语嘲讽与群体孤立。（16字→4字，亦可缩为“霸凌”）", 
         defEn: "School bullying", 
         defBm: "Buli sekolah", 
         example: "顽劣团伙对插班生长期进行冷嘲热讽、恶语辱骂并故意孤立排挤。 → 校方严厉惩治这起校园霸凌。" 
     },
     { 
-        word: "挑灯夜读废寝忘食起早贪黑闻鸡起舞=刻苦勤学", 
-        pinyin: "tiāo dēng yè dú fèi qǐn wàng shí = kè kǔ qín xué", 
+        word: "挑灯夜读 废寝忘食 起早贪黑 闻鸡起舞=刻苦勤学", 
+        pinyin: "tiāo dēng yè dú fèi qǐn wàng shí qǐ zǎo tān hēi wén jī qǐ wǔ", 
         defZh: "克服身体劳累疲乏、日夜不息执着投入功课的卓越学习态度。（16字→4字，亦可缩为“勤奋苦读”）", 
         defEn: "Study diligently / Industrious learning", 
         defBm: "Belajar bersungguh-sungguh dengan gigih", 
         example: "清寒学子挑灯夜读、废寝忘食，终在大考中金榜题名。 → 学子凭刻苦勤学改变命运。" 
     },
     { 
-        word: "走私偷渡贩毒开赌场放高利贷=涉黑活动", 
-        pinyin: "zǒu sī tōu dù fàn dú fàng dài = shè hēi huó dòng", 
+        word: "走私偷渡 贩毒 开赌场 放高利贷=涉黑活动", 
+        pinyin: "zǒu sī tōu dù fàn dú kāi dǔ chǎng fàng gāo lì dài", 
         defZh: "有严密组织团伙背景的地下地下黑恶势力开展的暴利非法牟利。（15字→4字，亦可缩为“黑帮犯罪”）", 
         defEn: "Underworld criminal activities", 
         defBm: "Aktiviti kumpulan kongsi gelap", 
         example: "跨国犯罪集团勾结境外私会党，大肆组织走私、贩毒与非法放贷。 → 警方雷霆扫荡跨国涉黑活动。" 
     },
     { 
-        word: "早退旷工消极怠工磨洋工粗制滥造=工作怠惰", 
-        pinyin: "zǎo tuì kuàng gōng xiāo jí dài gōng = gōng zuò dài duò", 
+        word: "早退旷工 消极怠工 磨洋工 粗制滥造=工作怠惰", 
+        pinyin: "zǎo tuì kuàng gōng xiāo jí dài gōng mó yáng gōng cū zhì làn zào", 
         defZh: "在工作岗位上缺乏敬业负责精神、敷衍了事的违纪消极做派。（15字→4字，亦可缩为“旷职怠工”）", 
         defEn: "Work negligence / Slacking at work", 
         defBm: "Sikap culas dalam kerja", 
         example: "个别学徒在工地上屡次早退旷工、消极磨洋工并生产劣品。 → 厂方坚决开除工作怠惰者。" 
     },
     { 
-        word: "金表钻戒跑车豪宅游艇名牌包=奢侈品", 
-        pinyin: "jīn biǎo zuàn jiè pǎo chē háo zhái = shē chǐ pǐn", 
+        word: "金表 钻戒 跑车 豪宅 游艇 名牌包=奢侈品", 
+        pinyin: "jīn biǎo zuàn jiè pǎo chē háo zhái yóu tǐng míng pái bāo", 
         defZh: "超出一般生存生活日常需求、价格极其昂贵的高档炫耀性消费物。（14字→3字）", 
         defEn: "Luxury goods", 
         defBm: "Barangan mewah", 
         example: "暴发户将大量不义横财挥霍在购买跑车、豪宅、游艇与名牌箱包上。 → 暴发户盲目追逐昂贵奢侈品。" 
     },
     { 
-        word: "背诵记忆理解归纳推理应用=认知过程", 
-        pinyin: "bèi sòng jì yì lǐ jiě tuī lǐ = rèn zhī guò chéng", 
+        word: "背诵 记忆 理解 归纳 推理 应用=认知过程", 
+        pinyin: "bèi sòng jì yì lǐ jiě guī nà tuī lǐ yìng yòng", 
         defZh: "人类大脑思维对外部所传授信息与知识进行层层吸收消化的全套机制。（14字→4字）", 
         defEn: "Cognitive process", 
         defBm: "Proses perkembangan kognitif", 
         example: "解答高阶数学难题必须贯穿背诵公式、逻辑推理与综合应用。 → 解题体现复杂认知过程。" 
     },
     { 
-        word: "结绳记事刻木记事刻骨甲骨文铸铭青铜=文字演化", 
-        pinyin: "jié shéng kè mù jiǎ gǔ wén jīng = wén zì yǎn huà", 
+        word: "结绳记事 刻木记事 刻骨甲骨文 铸铭青铜=文字演化", 
+        pinyin: "jié shéng jì shì kè mù jì shì kè gǔ jiǎ gǔ wén zhù míng qīng tóng", 
         defZh: "人类在漫长历史中由符号记录逐步走向成熟汉字书写的历史进程。（16字→4字）", 
         defEn: "Evolution of writing / Language evolution", 
         defBm: "Evolusi sistem tulisan", 
         example: "中华文明从最初的结绳刻木，一步步发展出甲骨文与青铜金文。 → 展馆清晰呈现了文字演化史。" 
     },
     { 
-        word: "打雷闪电狂风暴雨冰雹龙卷风=强对流天气", 
-        pinyin: "dǎ léi shǎn diàn kuáng fēng bīng báo = qiáng duì liú tiān qì", 
+        word: "打雷闪电 狂风暴雨 冰雹 龙卷风=强对流天气", 
+        pinyin: "dǎ léi shǎn diàn kuáng fēng bào yǔ bīng báo lóng juǎn fēng", 
         defZh: "由大气强烈垂直运动引发的剧烈突发性灾害性气象统称。（15字→5字，亦可缩为“极端天气”）", 
         defEn: "Severe convective weather", 
         defBm: "Cuaca perolakan ganas", 
         example: "气象雷达监测到午后将出现狂风、电闪雷鸣甚至巨型冰雹。 → 市政提醒防范强对流天气。" 
     },
     { 
-        word: "打听询问盘查刺探偷听查阅档案=收集情报", 
-        pinyin: "dǎ ting xún wèn pán chá cì tàn = shōu jí qíng bào", 
+        word: "打听询问 盘查刺探 偷听 查阅档案=收集情报", 
+        pinyin: "dǎ ting xún wèn pán chá cì tàn tōu tīng chá yuè dàng àn", 
         defZh: "为了掌握对手秘密或内部动向而采取的各类隐秘信息侦搜行动。（15字→4字，亦可缩为“刺探情报”）", 
         defEn: "Gather intelligence", 
         defBm: "Mengumpul maklumat risikan", 
         example: "间谍乔装潜伏，多方暗中打听、刺探敌方防守虚实与偷看密件。 → 间谍伺机收集情报。" 
     },
     { 
-        word: "砍伐森林过度放牧围湖造田滥采地下水=破坏生态", 
-        pinyin: "kǎn fá sēn lín fàng mù zào tián = pò huài shēng tài", 
+        word: "砍伐森林 过度放牧 围湖造田 滥采地下水=破坏生态", 
+        pinyin: "kǎn fá sēn lín guò dù fàng mù wéi hú zào tián làn cǎi dì xià shuǐ", 
         defZh: "人类以牺牲自然承载力为代价盲目开发大自然的不计后果恶行。（16字→4字）", 
         defEn: "Destroy the ecological balance", 
         defBm: "Merosakkan ekosistem alam", 
         example: "盲目砍伐原始丛林、过度放牧与非法围湖造田引发了严重荒漠化。 → 肆意破坏生态终遭报应。" 
     },
     { 
-        word: "买股票买期货买外汇炒黄金买虚拟币=高风险投机", 
-        pinyin: "mǎi gǔ piào qī huò wài huì chǎo bì = gāo fēng xiǎn tóu jī", 
+        word: "买股票 买期货 买外汇 炒黄金 买虚拟币=高风险投机", 
+        pinyin: "mǎi gǔ piào mǎi qī huò mǎi wài huì chǎo huáng jīn mǎi xū nǐ bì", 
         defZh: "押注价格短期剧烈波动的金融衍生产品、极易带来倾家荡产的激进行为。（16字→5字，或缩为“盲目投机”）", 
         defEn: "High-risk speculation", 
         defBm: "Spekulasi berisiko tinggi", 
         example: "赌徒将全部养老金悉数投入期货、外汇短线甚至炒作虚拟币中。 → 赌徒深陷高风险投机。" 
     },
     { 
-        word: "说大话吹牛皮夸夸其谈信口开河许空头支票=言而无信", 
-        pinyin: "shuō dà huà chuī niú pí kuā kuā qí tán = yán ér wú xìn", 
+        word: "说大话 吹牛皮 夸夸其谈 信口开河 许空头支票=言而无信", 
+        pinyin: "shuō dà huà chuī niú pí kuā kuā qí tán xìn kǒu kāi hé xǔ kōng tóu zhī piào", 
         defZh: "说话浮夸轻率、做出许诺却从不落实兑现的不诚实品德表象。（17字→4字，亦可缩为“虚浮无信”）", 
         defEn: "Untrustworthy / Unreliable in speech", 
         defBm: "Cakap tak serupa bikin / Tidak amanah", 
         example: "此人在人前习惯说大话、吹牛皮夸夸其谈，但事后却从不兑现诺言。 → 为人最忌言而无信。" 
     },
     { 
-        word: "手舞足蹈眉飞色舞喜极而泣欢呼雀跃=狂喜", 
-        pinyin: "shǒu wǔ zú dǎo méi fēi sè wǔ = kuáng xǐ", 
+        word: "手舞足蹈 眉飞色舞 喜极而泣 欢呼雀跃=狂喜", 
+        pinyin: "shǒu wǔ zú dǎo méi fēi sè wǔ xǐ jí ér qì huān hū què yuè", 
         defZh: "把多种因极度兴奋快乐而流露于外表的肢体神态动作汇总。（16字→2字，亦可缩为“欣喜若狂”）", 
         defEn: "Ecstatic / Wild joy", 
         defBm: "Teramat gembira / Riang gembira", 
         example: "得知自己的队伍斩获世界总冠军，队员们在场边手舞足蹈、欢呼相拥。 → 队员们陷入一片狂喜。" 
     },
     { 
-        word: "垂头丧气愁眉不展唉声叹气怨天尤人=沮丧失意", 
-        pinyin: "chuí tóu sàng qì chóu méi bù zhǎn = jǔ sàng shī yì", 
+        word: "垂头丧气 愁眉不展 唉声叹气 怨天尤人=沮丧失意", 
+        pinyin: "chuí tóu sàng qì chóu méi bù zhǎn āi shēng tàn qì yuàn tiān yóu rén", 
         defZh: "在遭遇重大挫折失败之后内心低落消极、精神萎靡的神情仪态。（16字→4字，亦可缩为“消极气馁”）", 
         defEn: "Depressed and dejected", 
         defBm: "Kecewa dan murung", 
         example: "项目失利后，他独自躲在角落愁眉不展、唉声叹气且怨天尤人。 → 创业失败令他沮丧失意。" 
     },
     { 
-        word: "打仗打败仗丢弃武器丢弃阵地狼狈逃跑=惨败溃逃", 
-        pinyin: "dǎ bài zhàng diū qì wǔ qì táo pǎo = cǎn bài kuì táo", 
+        word: "打仗打败仗 丢弃武器 丢弃阵地 狼狈逃跑=惨败溃逃", 
+        pinyin: "dǎ zhàng dǎ bài zhàng diū qì wǔ qì diū qì zhèn dì láng bèi táo pǎo", 
         defZh: "在战事交锋中全线失守、溃不成军地仓皇逃命。（16字→4字，亦可缩为“全线溃退”）", 
         defEn: "Crushing defeat and rout", 
         defBm: "Kekalahan teruk dan lari bertempiaran", 
         example: "敌军在前线遭到毁灭性伏击，丢下辎重武器狼狈向后山逃窜。 → 敌军兵败如山倒、惨败溃逃。" 
     },
     { 
-        word: "刻舟求剑买椟还珠拔苗助长守株待兔=愚蠢荒谬", 
-        pinyin: "kè zhōu qiú jiàn mǎi dú huán zhū = yú chǔn huāng miù", 
+        word: "刻舟求剑 买椟还珠 拔苗助长 守株待兔=愚蠢荒谬", 
+        pinyin: "kè zhōu qiú jiàn mǎi dú huán zhū bá miáo zhù zhǎng shǒu zhū dài tù", 
         defZh: "把列举的一系列违背客观自然规律、死板教条的可笑寓言故事概括。（16字→4字，或缩为“寓言典故”）", 
         defEn: "Foolish and absurd", 
         defBm: "Tindakan bodoh lagi mengarut", 
         example: "不分析实际条件变化而生搬硬套书本，无异于刻舟求剑与守株待兔。 → 此种教条做法实属愚蠢荒谬。" 
     },
     { 
-        word: "结拜兄弟歃血为盟义结金兰义薄云天=义结生死", 
-        pinyin: "jié bài xiōng dì shà xuè wéi méng = yì jié shēng sǐ", 
+        word: "结拜兄弟 歃血为盟 义结金兰 义薄云天=义结生死", 
+        pinyin: "jié bài xiōng dì shà xuè wéi méng yì jié jīn lán yì bó yún tiān", 
         defZh: "把非血缘朋友之间发下庄严誓言誓同生死的情谊合称。（16字→4字，亦可缩为“结拜盟誓”）", 
         defEn: "Sworn brotherhood / Lifelong fidelity", 
         defBm: "Bersumpah setia bersaudara sehidup semati", 
         example: "刘备、关羽与张飞桃园结义，歃血为盟誓同生死。 → 桃园三结义象征英雄义结生死。" 
     },
     { 
-        word: "偷看试卷请人替考藏匿小抄用手机搜答案=考试作弊", 
-        pinyin: "tōu kàn shì juàn qǐng rén tì kǎo = kǎo shì zuò bì", 
+        word: "偷看试卷 请人替考 藏匿小抄 手机搜答案=考试作弊", 
+        pinyin: "tōu kàn shì juàn qǐng rén tì kǎo cáng nì xiǎo chāo shǒu jī sōu dá àn", 
         defZh: "在正规大考测验中使用不正当非诚信手段牟取成绩的违规行为。（17字→4字，亦可缩为“作弊”）", 
         defEn: "Exam cheating / Academic dishonesty", 
         defBm: "Meniru dalam peperiksaan", 
         example: "该考生因在考场内私看夹带小抄并用微型耳机与场外串通被当场查获。 → 监考官严惩这起考试作弊。" 
     },
     { 
-        word: "偷工减料以次充好掺杂使假缺斤少两=制假售假", 
-        pinyin: "tōu gōng jiǎn liào yǐ cì chōng hǎo = zhì jiǎ shòu jiǎ", 
+        word: "偷工减料 以次充好 掺杂使假 缺斤少两=制假售假", 
+        pinyin: "tōu gōng jiǎn liào yǐ cì chōng hǎo chān zá shǐ jiǎ quē jīn shǎo liǎng", 
         defZh: "不法商家在生产流通全流程中恶意坑害消费者权益的违法举动。（16字→4字，亦可缩为“坑蒙拐骗”）", 
         defEn: "Manufacture and sale of shoddy goods", 
         defBm: "Membuat dan menjual barangan tiruan/palsu", 
         example: "黑作坊在建筑材料生产中偷工减料、以次充好甚至严重掺假。 → 执法局立案严惩制假售假。" 
     },
     { 
-        word: "上课发呆睡觉打闹吃零食玩手机=课堂违纪", 
-        pinyin: "shàng kè fā dāi shuì jiào dǎ nào = kè táng wéi jì", 
+        word: "上课发呆 睡觉打闹 吃零食 玩手机=课堂违纪", 
+        pinyin: "shàng kè fā dāi shuì jiào dǎ nào chī líng shí wán shǒu jī", 
         defZh: "在正规课堂教学秩序下发生的妨碍自己与他人听课的违规涣散举动。（15字→4字，亦可缩为“纪律涣散”）", 
         defEn: "Classroom indiscipline", 
         defBm: "Pelanggaran disiplin bilik darjah", 
         example: "后排个别顽皮学生在华文课上随意交头接耳、偷吃零食甚至睡觉。 → 巡堂老师严肃记录课堂违纪。" 
     },
     { 
-        word: "买股票被套做生意亏本投资失败房子断供=陷入财务危机", 
-        pinyin: "mǎi gǔ bèi tào kuī běn duàn gòng = xiàn rù cái wù wēi jī", 
+        word: "买股票被套 做生意亏本 投资失败 房子断供=陷入财务危机", 
+        pinyin: "mǎi gǔ piào bèi tào zuò shēng yi kuī běn tóu zī shī bài fáng zi duàn gòng", 
         defZh: "个人或企业资金链彻底断裂、面临巨额亏损逼债的绝望境地。（18字→6字，亦可缩为“破产窘境”）", 
         defEn: "Fall into a financial crisis", 
         defBm: "Terjerumus dalam krisis kewangan", 
         example: "生意倒闭且银行借贷全面爆仓断供，令他的家庭在数月内陷入绝境。 → 主角因投资失败陷入财务危机。" 
     },
     { 
-        word: "立字据按手印公证人签字盖官方公章=签署契约", 
-        pinyin: "lì zì jù àn shǒu yìn qiān zì gài zhāng = qiān shǔ qì yuē", 
+        word: "立字据 按手印 公证人签字 盖官方公章=签署契约", 
+        pinyin: "lì zì jù àn shǒu yìn gōng zhèng rén qiān zì gài guān fāng gōng zhāng", 
         defZh: "具有法律约束力的各方当面订立协议并完成正规合法确认程序。（16字→4字，亦可缩为“立约履约”）", 
         defEn: "Sign a binding contract", 
         defBm: "Menandatangani kontrak perjanjian", 
         example: "双方在调解员见证下当场订立赔偿字据、按手印并加盖公章。 → 争议双方终正式签署契约。" 
     },
     { 
-        word: "起早贪黑风餐露宿跋山涉水忍饥挨饿=历尽艰辛", 
-        pinyin: "qǐ zǎo tān hēi fēng cān lù sù = lì jìn jiān xīn", 
+        word: "起早贪黑 风餐露宿 跋山涉水 忍饥挨饿=历尽艰辛", 
+        pinyin: "qǐ zǎo tān hēi fēng cān lù sù bá shān shè shuǐ rěn jī āi è", 
         defZh: "在恶劣艰苦的外界环境下付出超常人体极限代价、饱经磨难。（16字→4字，亦可缩为“备尝艰险”）", 
         defEn: "Endure all kinds of hardships", 
         defBm: "Mengharungi pelbagai kepayahan getir", 
         example: "科考队穿行在无人区，一路起早贪黑、风餐露宿且忍饥挨饿。 → 考察队员一路历尽艰辛。" 
     },
     { 
-        word: "买车买房结婚生子赡养父母教育儿女=人生责任", 
-        pinyin: "mǎi chē fáng jié hūn yǎng lǎo yù ér = rén shēng zé rèn", 
+        word: "买车买房 结婚生子 赡养父母 教育儿女=人生责任", 
+        pinyin: "mǎi chē mǎi fáng jié hūn shēng zǐ shàn yǎng fù mǔ jiào yù ér nǚ", 
         defZh: "人步入成年后在家庭与社会伦理上必须肩负起的一连串法定道德重担。（16字→4字，亦可缩为“生活重担”）", 
         defEn: "Life responsibilities", 
         defBm: "Tanggungjawab kehidupan", 
         example: "成年人终日奔波辛劳，内心深处必须默默扛起结婚买房与育幼赡老的重托。 → 青年步入社会须承担人生责任。" 
     },
     { 
-        word: "写请柬包红包准备喜糖订婚宴包大巴=操办婚事", 
-        pinyin: "xiě qǐng jiǎn bāo hóng bāo dìng yàn = cāo bàn hūn shì", 
+        word: "写请柬 包红包 准备喜糖 订婚宴 包大巴=操办婚事", 
+        pinyin: "xiě qǐng jiǎn bāo hóng bāo zhǔn bèi xǐ táng dìng hūn yàn bāo dà bā", 
         defZh: "筹备并举办男女成婚喜宴所必须周旋张罗的各项民间礼仪程序。（16字→4字，亦可缩为“筹备婚礼”）", 
         defEn: "Organize a wedding", 
         defBm: "Menguruskan majlis perkahwinan", 
         example: "新郎家人提前两个月忙得不可开交，忙于分发请柬、订婚宴并安排迎亲。 → 男方全家齐心操办婚事。" 
     },
     { 
-        word: "买寿衣订棺木买墓地下讣告雇吹鼓手=筹办丧事", 
-        pinyin: "mǎi shòu yī dìng guān fā fù gào = cāo bàn sàng shì", 
+        word: "买寿衣 订棺木 买墓地 下讣告 雇吹鼓手=筹办丧事", 
+        pinyin: "mǎi shòu yī dìng guān mù mǎi mù dì xià fù gào gù chuī gǔ shǒu", 
         defZh: "为去世老人送终并安葬入土所周密筹办的整套殡葬仪式流程。（16字→4字，亦可缩为“治丧礼仪”）", 
         defEn: "Arrange funeral affairs", 
         defBm: "Menguruskan upacara pengebumian", 
         example: "孝子贤孙齐聚灵堂前，肃穆周到地安排订购棺木、发布讣告并布置灵堂。 → 族中晚辈合力筹办丧事。" 
     },
     { 
-        word: "听讲记笔记举手提问课后讨论查阅资料=主动求学", 
-        pinyin: "tīng jiǎng jì bǐ jì chá zī liào = zhǔ dòng qiú xué", 
+        word: "听讲 记笔记 举手提问 课后讨论 查阅资料=主动求学", 
+        pinyin: "tīng jiǎng jì bǐ jì jǔ shǒu tí wèn kè hòu tǎo lùn chá yuè zī liào", 
         defZh: "不依赖师长强加督促、自身充满强烈渴望的主动探究学习状态。（16字→4字，亦可缩为“自主学习”）", 
         defEn: "Active and self-directed learning", 
         defBm: "Belajar secara aktif dan berdikari", 
         example: "他在自习室里专注听名师网课、勤做笔记并主动上图书馆查考古籍。 → 该生展现极高主动求学精神。" 
     },
     { 
-        word: "敲键盘点鼠标盯屏幕戴耳机通宵打游戏=沉迷网络", 
-        pinyin: "qiāo jiàn pán dīng píng mù tōng xiāo = chén mí wǎng luò", 
+        word: "敲键盘 点鼠标 盯屏幕 戴耳机 通宵打游戏=沉迷网络", 
+        pinyin: "qiāo jiàn pán diǎn shǔ biāo dīng píng mù dài ěr jī tōng xiāo dǎ yóu xì", 
         defZh: "自控力薄弱、毫无节制地整天泡在虚拟电子游戏网络世界里荒废学业。（17字→4字，亦可缩为“网络成瘾”）", 
         defEn: "Addicted to internet and gaming", 
         defBm: "Ketagihan internet dan permainan video", 
         example: "少年整夜反锁房门，目不转睛盯着电脑屏幕通宵玩网游而不去上学。 → 青少年万不可沉迷网络。" 
     },
     { 
-        word: "修筑水库加固堤坝疏浚河道植树造林开辟蓄洪区=综合防汛", 
-        pinyin: "xiū shuǐ kù shū jùn hé dào zào lín = zōng hé fáng xùn", 
+        word: "修筑水库 加固堤坝 疏浚河道 植树造林 开辟蓄洪区=综合防汛", 
+        pinyin: "xiū zhù shuǐ kù jiā gù dī bà shū jùn hé dào zhí shù zào lín kāi pì xù hóng qū", 
         defZh: "水利防灾部门为抵御可能发生的大洪水所落实的系统化工程。（20字→4字，亦可缩为“防洪治水”）", 
         defEn: "Comprehensive flood prevention", 
         defBm: "Kawalan banjir menyeluruh", 
         example: "流域水利局通过加固江堤、清淤河床并合理开辟排洪蓄洪通道。 → 政府科学推进综合防汛工程。" 
     },
     { 
-        word: "查封黑作坊没收假药吊销执照抓捕主犯查扣赃款=严打假药", 
-        pinyin: "chá fēng mò shōu diào xiāo zhuā bǔ = yán dǎ jiǎ yào", 
+        word: "查封黑作坊 没收假药 吊销执照 抓捕主犯 查扣赃款=严打假药", 
+        pinyin: "chá fēng hēi zuò fāng mò shōu jiǎ yào diào xiāo zhí zhào zhuā bǔ zhǔ fàn chá kòu zāng kuǎn", 
         defZh: "卫生与司法部门联手对制造贩售危害人命假劣药品的毁灭性执法打击。（20字→4字，或缩为“执法取缔”）", 
         defEn: "Severe crackdown on counterfeit medicines", 
         defBm: "Membanteras ubat tiruan secara tegas", 
         example: "药监局协同警方出重拳，雷霆查封黑厂房、收缴假药并拘捕涉案主谋。 → 司法部门联手严打假药。" 
     },
     { 
-        word: "生火煮水添柴撇沫盖锅慢炖出锅保温=烹饪工序", 
-        pinyin: "shēng huǒ zhǔ shuǐ tiān chái màn dùn = pēng rèn gōng xù", 
+        word: "生火煮水 添柴 撇沫 盖锅慢炖 出锅保温=烹饪工序", 
+        pinyin: "shēng huǒ zhǔ shuǐ tiān chái piē mò gài guō màn dùn chū guō bǎo wēn", 
         defZh: "传统厨师在灶台前为烹制出美味佳肴所依序执行的操作步骤。（16字→4字，亦可缩为“烹饪烹调”）", 
         defEn: "Cooking procedures / Culinary steps", 
         defBm: "Langkah-langkah memasak", 
         example: "大厨精准把控火候，严格遵循生火煮水、打去浮沫与文火慢炖步骤。 → 大厨熟练完成烹饪工序。" 
     },
     { 
-        word: "砍伐树木剥除树皮粉碎打浆铺平晾晒裁切成纸=传统造纸", 
-        pinyin: "kǎn shù bō pí dǎ jiāng liàng shài = chuán tǒng zào zhǐ", 
+        word: "砍伐树木 剥除树皮 粉碎打浆 铺平晾晒 裁切成纸=传统造纸", 
+        pinyin: "kǎn fá shù mù bō chú shù pí fěn suì dǎ jiāng pū píng liàng shài cái qiē chéng zhǐ", 
         defZh: "中国古代工匠历经砍伐植物、制浆晒干而产出纸张的发明工序。（17字→4字，亦可缩为“造纸工艺”）", 
         defEn: "Traditional papermaking", 
         defBm: "Seni pembuatan kertas tradisional", 
         example: "工坊至今完整保留了剥树皮、石臼打浆、竹帘抄纸与焙干的古老手艺。 → 工匠向游人展示传统造纸。" 
     },
     { 
-        word: "整地起垄浸种催芽插秧下田抽穗灌浆扬场归仓=水稻耕作", 
-        pinyin: "zhěng dì qǐ lǒng chā yāng shōu gē = shuǐ dào gēng zuò", 
+        word: "整地起垄 浸种催芽 插秧下田 抽穗灌浆 扬场归仓=水稻耕作", 
+        pinyin: "zhěng dì qǐ lǒng jìn zhǒng cuī yá chā yāng xià tián chōu suì guàn jiāng yáng cháng guī cāng", 
         defZh: "种植稻米粮食作物从松土直到最终颗粒归仓全周期的农艺规程。（17字→4字，亦可缩为“农耕循环”）", 
         defEn: "Rice cultivation", 
         defBm: "Penanaman padi sawah", 
         example: "粮农一年到头扎根水田中，周而复始地历经浸种、育苗、插秧与收割。 → 农夫熟谙整套水稻耕作。" 
     },
     { 
-        word: "观望行情打探底价犹豫不决错失良机捶胸顿足=错失商机", 
-        pinyin: "guān wàng dǎ tàn chí yí dùn zú = cuò shī shāng jī", 
+        word: "观望行情 打探底价 犹豫不决 错失良机 捶胸顿足=错失商机", 
+        pinyin: "guān wàng háng qíng dǎ tàn dǐ jià yóu yù bù jué cuò shī liáng jī chuí xiōng dùn zú", 
         defZh: "在瞬息万变的商业市场上因优柔寡断而与巨大财富机遇失之交臂。（16字→4字）", 
         defEn: "Miss a business opportunity", 
         defBm: "Terlepas peluang perniagaan", 
         example: "买家面对厂房降价转让犹豫不决，一再打探底价结果被竞争对手捷足先登。 → 贪心犹豫致使他错失商机。" 
     },
     { 
-        word: "拉拢选民挨户拜票发放传单举行演讲许下诺言=大选竞选", 
-        pinyin: "lā lǒng bǎi piào yǎn jiǎng xǔ nuò = dà xuǎn jìng xuǎn", 
+        word: "拉拢选民 挨户拜票 发放传单 举行演讲 许下诺言=大选竞选", 
+        pinyin: "lā lǒng xuǎn mín āi hù bài piào fā fàng chuán dān jǔ xíng yǎn jiǎng xǔ xià nuò yán", 
         defZh: "政党及候选人在议会法定选举期间开展的全方位拉票造势政治动员。（17字→4字，亦可缩为“选举拉票”）", 
         defEn: "Election campaigning", 
         defBm: "Kempen pilihan raya", 
         example: "候选人连日顶着炎阳走访选区，挨门挨户登门拜票并向选民阐述执政纲领。 → 朝野全力投入大选竞选。" 
     },
     { 
-        word: "封锁消息隐瞒真相恐吓证人篡改账目转移赃款=掩盖罪行", 
-        pinyin: "fēng suǒ yǐn mán kǒng hè zhuǎn yí = yǎn gài zuì xíng", 
+        word: "封锁消息 隐瞒真相 恐吓证人 篡改账目 转移赃款=掩盖罪行", 
+        pinyin: "fēng suǒ xiāo xi yǐn mán zhēn xiàng kǒng hè zhèng rén cuàn gǎi zhàng mù zhuǎn yí zāng kuǎn", 
         defZh: "违法犯罪分子为逃脱法律严惩而采取的一连串毁灭罪证的非法企图。（17字→4字，亦可缩为“掩饰犯罪”）", 
         defEn: "Cover up crimes / Conceal offenses", 
         defBm: "Menutup kesalahan jenayah", 
         example: "贪官暗中指使手下威逼目击证人封口，并连夜伪造财务账簿转移资金。 → 涉案人员妄图掩盖罪行。" 
     },
     { 
-        word: "调集警力封锁路口架设路障盘查可疑围捕逃犯=设卡缉凶", 
-        pinyin: "diào jǐng fēng lù pán chá wéi bǔ = shè kǎ jī xiōng", 
+        word: "调集警力 封锁路口 架设路障 盘查可疑 围捕逃犯=设卡缉凶", 
+        pinyin: "diào jí jǐng lì fēng suǒ lù kǒu jià shè lù zhàng pán chá kě yí wéi bǔ táo fàn", 
         defZh: "公安执法部门为捕获潜逃通缉犯而在交通咽喉布下天罗地网。（16字→4字，亦可缩为“布控抓捕”）", 
         defEn: "Set up checkpoints to hunt suspects", 
         defBm: "Mengadakan sekatan jalan memburu suspek", 
         example: "重案组火速在出城高速公路口拉开铁丝网，严密盘查每辆过往客货车辆。 → 警方在咽喉设卡缉凶。" 
     },
     { 
-        word: "借钱度日典当衣物典当首饰债台高筑被人逼债=生活穷困", 
-        pinyin: "jiè qián diǎn dāng zhài tái gāo zhù = shēng huó qióng kùn", 
+        word: "借钱度日 典当衣物 典当首饰 债台高筑 被人逼债=生活穷困", 
+        pinyin: "jiè qián dù rì diǎn dāng yī wù diǎn dāng shǒu shì zhài tái gāo zhù bèi rén bī zhài", 
         defZh: "家道中落或破产后经济陷入极度窘迫、变卖家产借贷度日的惨状。（17字→4字，亦可缩为“陷入赤贫”）", 
         defEn: "Impoverished life / Dire poverty", 
         defBm: "Kehidupan miskin melarat", 
         example: "破产后的落魄富商被迫典当首饰与家具以抵租金，终日被高利贷债主堵门。 → 破产令他生活穷困。" 
     },
     { 
-        word: "挑拨是非颠倒黑白落井下石恶意中伤煽风点火=搬弄是非", 
-        pinyin: "tiáo bō diān dǎo luò jǐng xià shí = bān nòng shì fēi", 
+        word: "挑拨是非 颠倒黑白 落井下石 恶意中伤 煽风点火=搬弄是非", 
+        pinyin: "tiáo bō shì fēi diān dǎo hēi bái luò jǐng xià shí è yì zhòng shāng shān fēng diǎn huǒ", 
         defZh: "心术不正之人在集体内部无端捏造谎言、破坏人际团结和谐。（17字→4字，亦可缩为“挑拨离间”）", 
         defEn: "Sow discord / Tell tales", 
         defBm: "Menghasut dan mengadu domba", 
         example: "小人在办公室里到处说三道四、故意歪曲事实并挑起同事之间的嫉妒仇怨。 → 团队严惩无端搬弄是非者。" 
     },
     { 
-        word: "救死扶伤废寝忘食钻研医术耐心问诊不收红包=医德高尚", 
-        pinyin: "jiù sǐ fú shāng zuān yán wèn zhěn = yī dé gāo shàng", 
+        word: "救死扶伤 废寝忘食 钻研医术 耐心问诊 不收红包=医德高尚", 
+        pinyin: "jiù sǐ fú shāng fèi qǐn wàng shí zuān yán yī shù nài xīn wèn zhěn bù shōu hóng bāo", 
         defZh: "医务工作者恪尽仁心仁术、廉洁奉公而展现出的崇高职业道德。（16字→4字，亦可缩为“仁心仁术”）", 
         defEn: "Noble medical ethics", 
         defBm: "Etika perubatan yang mulia", 
         example: "老院长行医半生，对待贫病患者关怀备至、拒收一切谢礼并贴钱送药。 → 群众赞颂老院长医德高尚。" 
     },
     { 
-        word: "打扫庭院擦拭门窗清洗地板修剪花草清理垃圾=清扫居所", 
-        pinyin: "dǎ sǎo tíng yuàn cā mén chuāng = qīng sǎo jū suǒ", 
+        word: "打扫庭院 擦拭门窗 清洗地板 修剪花草 清理垃圾=清扫居所", 
+        pinyin: "dǎ sǎo tíng yuàn cā shì mén chuāng qīng xǐ dì bǎn xiū jiǎn huā cǎo qīng lǐ lā jī", 
         defZh: "保持居住环境卫生整洁而进行的系统性家庭劳动。（16字→4字，亦可缩为“大扫除”）", 
         defEn: "Clean the residence", 
         defBm: "Membersihkan kediaman rumah", 
         example: "新春将至，全家男女老幼齐上阵，分工清洗门窗、擦拭桌椅并扫除蛛网。 → 节前全家合力清扫居所。" 
     },
     { 
-        word: "登门致歉当面认错赔偿损失消除误会握手言和=化解冲突", 
-        pinyin: "dēng mén zhì qiàn péi cháng hé jiě = huà jiě chōng tū", 
+        word: "登门致歉 当面认错 赔偿损失 消除误会 握手言和=化解冲突", 
+        pinyin: "dēng mén zhì qiàn dāng miàn rèn cuò péi cháng sǔn shī xiāo chú wù huì wò shǒu yán hé", 
         defZh: "在矛盾发生后拿出诚意以积极姿态主动弥补过失、争取双方谅解。（17字→4字，亦可缩为“握手言和”）", 
         defEn: "Resolve conflicts / Reconcile", 
         defBm: "Menyelesaikan konflik perselisihan", 
         example: "肇事邻舍主动备礼登门道歉，全额补偿损毁围墙费用并真诚恳谈。 → 邻里各退一步化解冲突。" 
     },
     { 
-        word: "买股票亏损做实业破产被人骗光家产无家可归=倾家荡产", 
-        pinyin: "gǔ piào kuī sǔn pò chǎn wū jiā = qīng jiā dàng chǎn", 
+        word: "买股票亏损 做实业破产 被人骗光家产 无家可归=倾家荡产", 
+        pinyin: "mǎi gǔ piào kuī sǔn zuò shí yè pò chǎn bèi rén piàn guāng jiā chǎn wú jiā kě guī", 
         defZh: "把全部家私财产与毕生积蓄丧失殆尽的毁灭性经济绝境。（16字→4字）", 
         defEn: "Lose all family fortune / Ruined", 
         defBm: "Jatuh muflis / Habis licin harta", 
         example: "他误信高额返利网络骗局将数套房产全抵押出去，最终落得房财两空。 → 贪婪令他落得倾家荡产。" 
     },
     { 
-        word: "修筑城墙挖掘护城河架设烽火台储备粮草=战备防御", 
-        pinyin: "xiū qiáng wā chí jià tái chǔ liáng = zhàn bèi fáng yù", 
+        word: "修筑城墙 挖掘护城河 架设烽火台 储备粮草=战备防御", 
+        pinyin: "xiū zhù chéng qiáng wā jué hù chéng hé jià shè fēng huǒ tái chǔ bèi liáng cǎo", 
         defZh: "古代军队在要塞关隘为抵御来犯之敌所做出的整套先期军事工程。（16字→4字，亦可缩为“城防战备”）", 
         defEn: "Combat readiness defense", 
         defBm: "Persediaan pertahanan perang", 
         example: "守军在边境重镇加高箭楼、拓宽战壕并堆满擂石滚木与充足箭矢。 → 守军严密落实战备防御。" 
     },
     { 
-        word: "生病吃药打针住院开刀手术康复理疗=治疗疾病", 
-        pinyin: "chī yào dǎ zhēn shǒu shù lǐ liáo = zhì liáo jí bìng", 
+        word: "生病吃药 打针住院 开刀手术 康复理疗=治疗疾病", 
+        pinyin: "shēng bìng chī yào dǎ zhēn zhù yuàn kāi dāo shǒu shù kāng fù lǐ liáo", 
         defZh: "患者在现代医疗体系帮助下促使机体摆脱病灶的全套医疗行为。（16字→4字，亦可缩为“就医治疗”）", 
         defEn: "Disease treatment", 
         defBm: "Rawatan perubatan penyakit", 
         example: "患者在专科医师指导下按疗程服药、定期接受化疗并配合物理复健。 → 现代医学科学治疗疾病。" 
     },
     { 
-        word: "风调雨顺五谷丰登六畜兴旺国泰民安=盛世安宁", 
-        pinyin: "fēng tiáo yǔ shùn wǔ gǔ fēng dēng = shèng shì ān níng", 
+        word: "风调雨顺 五谷丰登 六畜兴旺 国泰民安=盛世安宁", 
+        pinyin: "fēng tiáo yǔ shùn wǔ gǔ fēng dēng liù chù xīng wàng guó tài mín ān", 
         defZh: "把自然天候配合农耕丰产且国家政治清明的大好局面合称。（16字→4字，亦可缩为“天下太平”）", 
         defEn: "Prosperous and peaceful times", 
         defBm: "Zaman kemakmuran dan keamanan", 
         example: "边境罢兵息战，百姓安居乐业，田野仓廪充实且市井熙熙攘攘。 → 朝野呈现一派盛世安宁。" 
     },
     { 
-        word: "兵荒马乱饥寒交迫流离失所民不聊生=乱世绝境", 
-        pinyin: "bīng huāng mǎ luàn liú lí shī suǒ = luàn shì jué jìng", 
+        word: "兵荒马乱 饥寒交迫 流离失所 民不聊生=乱世绝境", 
+        pinyin: "bīng huāng mǎ luàn jī hán jiāo pò liú lí shī suǒ mín bù liáo shēng", 
         defZh: "战争与灾荒交织导致社会完全失序、平民失去立足家园的悲惨炼狱。（16字→4字，亦可缩为“民不聊生”）", 
         defEn: "Plight of troubled times", 
         defBm: "Keadaan sengsara zaman perang", 
         example: "诸侯连年争霸混战，城池焚毁，田园荒芜，沿街四处是倒毙的逃难饿殍。 → 黎民百姓深陷乱世绝境。" 
     },
     { 
-        word: "开垦荒地引水灌溉施肥除草驱赶飞鸟=农田开辟", 
-        pinyin: "kāi huāng guàn gài féi cǎo qū niǎo = nóng tián kāi pì", 
+        word: "开垦荒地 引水灌溉 施肥除草 驱赶飞鸟=农田开辟", 
+        pinyin: "kāi kěn huāng dì yǐn shuǐ guàn gài shī féi chú cǎo qū gǎn fēi niǎo", 
         defZh: "把野外未开垦的荒芜丘陵沼泽转变成适于播种粮食熟地的过程。（16字→4字，亦可缩为“辟田垦荒”）", 
         defEn: "Farmland reclamation", 
         defBm: "Pembukaan tanah pertanian", 
         example: "拓荒先辈砍去荆棘灌木、深翻胶泥土块并挖掘引水灌溉渠道。 → 农夫齐心协力推进农田开辟。" 
     },
     { 
-        word: "查抄赃款封存豪宅扣押豪车追缴黄金=追缴非法所得", 
-        pinyin: "chá chāo zhuī jiǎo fēi fǎ suǒ dé = zhuī jiǎo fēi fǎ suǒ dé", 
+        word: "查抄赃款 封存豪宅 扣押豪车 追缴黄金=追缴非法所得", 
+        pinyin: "chá chāo zāng kuǎn fēng cún háo zhái kòu yā háo chē zhuī jiǎo huáng jīn", 
         defZh: "国家司法机关对贪官或罪犯非法中饱私囊的全部财产实施法定查扣。（16字→6字，亦可缩为“追赃”）", 
         defEn: "Recover illicit gains / Forfeit dirty money", 
         defBm: "Menuntut balik perolehan haram", 
         example: "反贪专员依法冻结其名下多个海外离岸空壳账户并勒令退赔全部赃款。 → 司法机关依法追缴非法所得。" 
     },
     { 
-        word: "聚精会神专心致志目不转睛全神贯注=高度专注", 
-        pinyin: "jù jīng huì shén quán shén guàn zhù = gāo dù zhuān zhù", 
+        word: "聚精会神 专心致志 目不转睛 全神贯注=高度专注", 
+        pinyin: "jù jīng huì shén zhuān xīn zhì zhì mù bù zhuǎn jīng quán shén guàn zhù", 
         defZh: "把形容人注意力高度集中、排斥一切外界干扰的状态汇聚提炼。（16字→4字，亦可缩为“专注”）", 
         defEn: "Highly focused / Full concentration", 
         defBm: "Tumpuan perhatian sepenuhnya", 
         example: "钟表维修老匠人屏气凝神，在放大镜下心无旁骛地微调极微小的齿轮。 → 师傅展现出高度专注。" 
     },
     { 
-        word: "走投无路穷途末路山穷水尽四面楚歌=陷入绝境", 
-        pinyin: "zǒu tóu wú lù sì miàn chǔ gē = xiàn rù jué jìng", 
+        word: "走投无路 穷途末路 山穷水尽 四面楚歌=陷入绝境", 
+        pinyin: "zǒu tóu wú lù qióng tú mò lù shān qióng shuǐ jìn sì miàn chǔ gē", 
         defZh: "把一切退路生机全部被彻底堵死、面临灭顶危险的处境概括。（16字→4字，亦可缩为“绝境”）", 
         defEn: "In desperate straits", 
         defBm: "Terdesak tanpa jalan keluar", 
         example: "在重兵包围与断水断粮的重压之下，守将自知突围无望已无路可退。 → 残军已然完全陷入绝境。" 
     },
     { 
-        word: "冷若冰霜面无表情一言不发漠不关心=极其冷漠", 
-        pinyin: "lěng ruò bīng shuāng yī yán bù fā = jí qí lěng mò", 
+        word: "冷若冰霜 面无表情 一言不发 漠不关心=极其冷漠", 
+        pinyin: "lěng ruò bīng shuāng miàn wú biǎo qíng yī yán bù fā mò bù guān xīn", 
         defZh: "缺乏应有人性温度与同理心、对旁人苦难表现出的超常麻木神情。（16字→4字，亦可缩为“冷酷麻木”）", 
         defEn: "Extremely indifferent", 
         defBm: "Sangat dingin dan tidak acuh", 
         example: "面对倒在雪地呼救的落难旅人，关卡卫兵只是斜眼蔑视并粗暴关上门锁。 → 卫兵态度显得极其冷漠。" 
     },
     { 
-        word: "指手画脚颐指气使发号施令盛气凌人=飞扬跋扈", 
-        pinyin: "zhǐ shǒu huà jiǎo shèng qì líng rén = fēi yáng bá hù", 
+        word: "指手画脚 颐指气使 发号施令 盛气凌人=飞扬跋扈", 
+        pinyin: "zhǐ shǒu huà jiǎo yí zhǐ qì shǐ fā hào shī lìng shèng qì líng rén", 
         defZh: "依仗自身权势地位蛮横傲慢、自命不凡地对待他人的霸道行径。（16字→4字，亦可缩为“蛮横专断”）", 
         defEn: "Arrogant and domineering", 
         defBm: "Bongkak dan sombong melampau", 
         example: "纨绔子弟依仗长辈庇护，在公共场所对服务人员随意呵斥打骂。 → 权贵子弟行事飞扬跋扈。" 
     },
     { 
-        word: "翻箱倒柜掘地三尺搜寻线索勘察痕迹=现场勘查", 
-        pinyin: "fān xiāng dǎo guì kān chá hén jì = xiàn chǎng kān chá", 
+        word: "翻箱倒柜 掘地三尺 搜寻线索 勘察痕迹=现场勘查", 
+        pinyin: "fān xiāng dǎo guì jué dì sān chǐ sōu xún xiàn suǒ kān chá hén jì", 
         defZh: "刑事侦查人员在犯罪现场细致搜集各类指纹物证的专业执法工序。（16字→4字，亦可缩为“搜集物证”）", 
         defEn: "On-site crime investigation", 
         defBm: "Pemeriksaan tempat kejadian", 
         example: "法医与刑警打着紫外线荧光灯，细致提取地面残留的微量毛发与纤维。 → 刑侦小组正在现场勘查。" 
     },
     { 
-        word: "废寝忘食起早摸黑通宵达旦孜孜不倦=辛勤劳作", 
-        pinyin: "fèi qǐn wàng shí zī zī bù juàn = xīn qín láo zuò", 
+        word: "废寝忘食 起早摸黑 通宵达旦 孜孜不倦=辛勤劳作", 
+        pinyin: "fèi qǐn wàng shí qǐ zǎo mō hēi tōng xiāo dá dàn zī zī bù juàn", 
         defZh: "长期不辞劳苦、克服身体疲劳投入生产劳动的奉献精神姿态。（16字→4字，亦可缩为“勤恳工作”）", 
         defEn: "Hard work / Diligent toil", 
         defBm: "Kerja keras yang gigih", 
         example: "科研小组连续数月泡在恒温无尘车间，反复修正集成电路设计漏洞。 → 团队日夜辛勤劳作。" 
     },
     { 
-        word: "打家劫舍杀人放火谋财害命拦路抢劫=作恶多端", 
-        pinyin: "dǎ jiā jié shè móu cái hài mìng = zuò è duō duān", 
+        word: "打家劫舍 杀人放火 谋财害命 拦路抢劫=作恶多端", 
+        pinyin: "dǎ jiā jié shè shā rén fàng huǒ móu cái hài mìng lán lù qiǎng jié", 
         defZh: "屡屡犯下严重侵害他人生命与私有财产大罪的暴徒所作的恶行。（16字→4字，亦可缩为“罪恶滔天”）", 
         defEn: "Commit all manner of crimes", 
         defBm: "Banyak melakukan kejahatan kejam", 
         example: "山贼草寇盘踞黑风寨数十年，屡次下山洗劫商队并烧毁周围村落。 → 匪首作恶多端终伏法。" 
     },
     { 
-        word: "借古讽今托物言志借景抒情指桑骂槐=文学笔法", 
-        pinyin: "jiè gǔ fěng jīn tuō wù yán zhì = wén xué bǐ fǎ", 
+        word: "借古讽今 托物言志 借景抒情 指桑骂槐=文学笔法", 
+        pinyin: "jiè gǔ fěng jīn tuō wù yán zhì jiè jǐng shū qíng zhǐ sāng mà huái", 
         defZh: "古典诗歌散文创作中作者间接寄托自身思想情感的艺术表现手法。（16字→4字，亦可缩为“写作手法”）", 
         defEn: "Literary writing techniques", 
         defBm: "Teknik penulisan sastera", 
         example: "作者表面在描写秋夜荒凉古树，实则含蓄针砭朝廷买官鬻爵的乱象。 → 诗篇巧用文学笔法。" 
     },
     { 
-        word: "买假药被骗买高仿受骗投资陷阱上当=遭受欺诈", 
-        pinyin: "mǎi jiǎ yào bèi piàn tóu zī shàng dàng = zāo shòu qī zhà", 
+        word: "买假药被骗 买高仿受骗 投资陷阱上当=遭受欺诈", 
+        pinyin: "mǎi jiǎ yào bèi piàn mǎi gāo fǎng shòu piàn tóu zī xiàn jǐng shàng dàng", 
         defZh: "无辜受害者被虚假宣传或精心设局的骗术骗取财物的遭遇。（16字→4字，亦可缩为“受骗上当”）", 
         defEn: "Defrauded / Fall victim to fraud", 
         defBm: "Ditipu / Menjadi mangsa penipuan", 
         example: "独居阿婆被推销员诱导，花光积蓄买下一堆毫无药效的廉价三无保健品。 → 受害老人不幸遭受欺诈。" 
     },
     { 
-        word: "整顿纪律正规作风严肃考勤清查账目=从严治企", 
-        pinyin: "zhěng dùn jì lǜ qíng chá zhàng mù = cóng yán zhì qǐ", 
+        word: "整顿纪律 正规作风 严肃考勤 清查账目=从严治企", 
+        pinyin: "zhěng dùn jì lǜ zhèng guī zuò fēng yán sù kǎo qín qīng chá zhàng mù", 
         defZh: "企业管理层依纪依规整肃内部不良做派、强化管理效率的治理行动。（16字→4字，亦可缩为“严格管理”）", 
         defEn: "Strict corporate governance", 
         defBm: "Tadbir urus korporat yang ketat", 
         example: "新董事长上任后大刀阔斧推行整风，刹住违规报销风气并严肃开除旷工人员。 → 集团全面落实从严治企。" 
     },
     { 
-        word: "打草惊蛇声东击西暗度陈仓关门捉贼=三十六计", 
-        pinyin: "dǎ cǎo jīng shé shēng dōng jī xī = sān shí liù jì", 
+        word: "打草惊蛇 声东击西 暗度陈仓 关门捉贼=三十六计", 
+        pinyin: "dǎ cǎo jīng shé shēng dōng jī xī àn dù chén cāng guān mén zhuō zéi", 
         defZh: "中国古代军事兵法谋略计策的经典集锦（16字→4字，亦可缩为“兵法谋略”）。", 
         defEn: "Thirty-Six Stratagems", 
         defBm: "Tiga Puluh Enam Taktik Perang", 
