@@ -38,12 +38,10 @@ function initApp() {
         let wrongList = JSON.parse(localStorage.getItem('vocabulary_wrong_list')) || [];
         updateWeaknessButton(wrongList.length);
 
-        // 直接使用全部数据，打乱顺序
         currentPlan = [...allIdioms].sort(() => 0.5 - Math.random());
         currentIndex = 0;
         isWeaknessMode = false;
         
-        // 重置测验历史
         quizHistory = [];
         quizRound = 0;
         
@@ -72,53 +70,60 @@ function renderCard() {
     // 分离问题与缩略答案
     const { question, answer } = splitWordItem(currentWord.word);
 
-    // ---------------- 正面渲染 ----------------
+    // ---------------- 正面渲染（拼音 + 汉字 精美流式排版） ----------------
     const rubyContainer = document.getElementById('card-word-ruby');
     if (rubyContainer) {
         const pinyinText = currentWord.pinyin || "";
-        // 取等号左边的拼音
         const questionPinyin = pinyinText.split("=")[0].trim();
         const pinyinArray = questionPinyin ? questionPinyin.split(/\s+/) : [];
 
-        // 仅当短词（<=4字）、非概述长句、且拼音和字数完全对应时才启用逐字注音
-        const canUseRuby = question.length <= 4 && pinyinArray.length === question.length;
+        // 根据字数长短智能缩放字号与拼音大小
+        let charSizeClass = "text-3xl sm:text-4xl";
+        let pySizeClass = "text-xs sm:text-sm";
+        let groupSize = 4; // 多少个字切分为一组词块
 
-        if (canUseRuby) {
-            let rubyHtml = `<div class="ruby-row-container">`;
-            for (let i = 0; i < question.length; i++) {
-                const char = question[i];
-                const py = pinyinArray[i] || "";
+        if (question.length > 14) {
+            charSizeClass = "text-base sm:text-lg";
+            pySizeClass = "text-[10px] sm:text-xs";
+            groupSize = 4;
+        } else if (question.length > 8) {
+            charSizeClass = "text-xl sm:text-2xl";
+            pySizeClass = "text-xs";
+            groupSize = 2;
+        } else if (question.length > 4) {
+            charSizeClass = "text-2xl sm:text-3xl";
+            pySizeClass = "text-xs sm:text-sm";
+            groupSize = 2;
+        }
+
+        // 把汉字和拼音按词块拆分，词块之间带明显间距，方便清晰朗读
+        let rubyHtml = `<div class="flex flex-wrap justify-center items-center gap-y-3 gap-x-2 max-w-full">`;
+        
+        for (let i = 0; i < question.length; i += groupSize) {
+            const chunkChars = question.slice(i, i + groupSize);
+            rubyHtml += `<div class="ruby-phrase-block bg-stone-50/60 sm:bg-transparent px-1 py-0.5 rounded-lg">`;
+            for (let j = 0; j < chunkChars.length; j++) {
+                const charIndex = i + j;
+                const char = chunkChars[j];
+                const py = pinyinArray[charIndex] || "";
                 rubyHtml += `
-                    <ruby class="inline-flex flex-col items-center mx-1">
-                        <rt class="text-base sm:text-lg text-stone-500 font-sans tracking-normal lowercase mb-1 font-medium">${py}</rt>
-                        <span class="font-serif font-bold text-3xl sm:text-4xl text-stone-800">${char}</span>
+                    <ruby class="ruby-char-unit">
+                        <rt class="${pySizeClass} text-stone-400 font-sans font-medium mb-0.5">${py}</rt>
+                        <span class="font-serif font-bold ${charSizeClass} text-stone-800">${char}</span>
                     </ruby>
                 `;
             }
             rubyHtml += `</div>`;
-            rubyContainer.innerHTML = rubyHtml;
-        } else {
-            // 概述题长句：横向段落流动排版，字数多时自适应字号
-            let dynamicFontSize = "text-2xl sm:text-3xl";
-            if (question.length > 20) {
-                dynamicFontSize = "text-base sm:text-lg leading-relaxed";
-            } else if (question.length > 12) {
-                dynamicFontSize = "text-lg sm:text-xl leading-relaxed";
-            } else if (question.length > 6) {
-                dynamicFontSize = "text-xl sm:text-2xl leading-normal";
-            }
-
-            rubyContainer.innerHTML = `
-                <div class="question-text-box px-2">
-                    <p class="font-serif font-bold ${dynamicFontSize} text-stone-800 tracking-wide">
-                        ${question}
-                    </p>
-                    <div class="mt-4 text-xs text-stone-400 font-sans tracking-normal">
-                        👆 这是概述原句，点击卡片翻看【提炼缩略词】
-                    </div>
-                </div>
-            `;
         }
+
+        rubyHtml += `</div>`;
+        rubyHtml += `
+            <div class="w-full text-center mt-3 text-[11px] text-stone-400 font-sans tracking-normal">
+                👆 概述原句 · 点击卡片翻看【提炼缩略词】
+            </div>
+        `;
+
+        rubyContainer.innerHTML = rubyHtml;
     }
 
     // ---------------- 反面渲染 ----------------
@@ -146,7 +151,6 @@ function renderCard() {
     const exampleEl = document.getElementById('card-example');
     if (exampleEl) {
         let exampleText = currentWord.example || '暂无例句。';
-        // 优先挖空缩略答案
         const targetWord = answer || question;
         if (targetWord && exampleText.includes(targetWord)) {
             exampleText = exampleText.replace(targetWord, `______`);
@@ -393,7 +397,6 @@ function renderQuizQuestion() {
     const optionsContainer = document.getElementById('quiz-options');
 
     if (currentQ.qType === 0) {
-        // 看词选缩略语
         questionWordEl.innerHTML = `
             <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-sans font-medium">看原词选对应缩略语</span>
             <div class="text-base sm:text-lg font-bold font-serif text-stone-800 mt-2 px-2 leading-relaxed">${currentQuestionText}</div>
@@ -410,7 +413,6 @@ function renderQuizQuestion() {
         }).join('');
 
     } else if (currentQ.qType === 1) {
-        // 根据释义选对应词语
         questionWordEl.innerHTML = `
             <span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-sans font-medium block w-max mx-auto mb-2">根据释义选对应词语</span>
             <p class="text-xs sm:text-sm font-medium font-sans px-4 text-stone-700 leading-relaxed text-left">${currentQ.defZh}</p>
@@ -427,7 +429,6 @@ function renderQuizQuestion() {
         }).join('');
 
     } else if (currentQ.qType === 2) {
-        // 概述语境填空
         let exampleText = currentQ.example || '暂无例句。';
         const targetWord = currentAnswerText || currentQuestionText;
         if (targetWord && exampleText.includes(targetWord)) {
